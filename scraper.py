@@ -94,4 +94,5 @@ def doctors_oladoc(city):
             spec   = txt(c.select_one(".speciality,.specialization,span[class*='spec']"))
             clinic = txt(c.select_one(".clinic,.hospital,span[class*='clinic']"))
             addr   = txt(c.select_one(".address,.location,span[class*='loc']"))
-            ph_el  = c.select_one("a​​​​​​​​​​​​​​​​
+            ph_el  = c.select_one("a[href^='tel:']")
+
