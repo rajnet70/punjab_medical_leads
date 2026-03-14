@@ -1,9 +1,10 @@
 import requests
-from bs4 import BeautifulSoup
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
-import time, random, os, logging
+import time
+import os
+import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)
@@ -15,84 +16,235 @@ PUNJAB_CITIES = [
     "Dera Ghazi Khan", "Muzaffargarh", "Chiniot", "Hafizabad", "Mandi Bahauddin"
 ]
 
-AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/17.3 Safari/605.1.15",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/123.0.0.0 Safari/537.36",
+DOCTOR_QUERIES = [
+    "doctor clinic", "physician", "specialist hospital",
+    "medical center", "health clinic", "general practitioner"
+]
+
+STORE_QUERIES = [
+    "medical store", "pharmacy", "dawakhana",
+    "chemist shop", "drugstore"
 ]
 
 OUTPUT_DIR = "output"
+API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
-def headers():
-    return {
-        "User-Agent": random.choice(AGENTS),
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Connection": "keep-alive",
-    }
 
-def fetch(url):
+def places_search(query, city):
+    results = []
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+    params = {"query": f"{query} in {city} Pakistan", "key": API_KEY}
+
     for _ in range(3):
         try:
-            r = requests.get(url, headers=headers(), timeout=14)
-            if r.status_code == 200:
-                return BeautifulSoup(r.text, "lxml")
-            if r.status_code == 429:
-                time.sleep(12)
+            r = requests.get(url, params=params, timeout=15)
+            data = r.json()
+
+            if data.get("status") not in ("OK", "ZERO_RESULTS"):
+                log.warning(f"Places API status: {data.get('status')} for {query} in {city}")
+                break
+
+            for place in data.get("results", []):
+                results.append(place)
+
+            next_token = data.get("next_page_token")
+            if not next_token:
+                break
+
+            time.sleep(2)
+            params = {"pagetoken": next_token, "key": API_KEY}
+
         except Exception as e:
-            log.warning(f"Fetch error: {e}")
-        time.sleep(random.uniform(2, 4))
-    return None
+            log.warning(f"Search error: {e}")
+            break
 
-def txt(el):
-    return el.get_text(strip=True) if el else ""
-
-def slug(city):
-    return city.lower().replace(" ", "-")
-
-def dedup(items, key_fn):
-    seen, out = set(), []
-    for item in items:
-        k = key_fn(item)
-        if k not in seen:
-            seen.add(k)
-            out.append(item)
-    return out
-
-def doctors_marham(city):
-    results = []
-    for page in range(1, 8):
-        url = f"https://www.marham.pk/doctors/pakistan/{slug(city)}" + (f"?page={page}" if page > 1 else "")
-        soup = fetch(url)
-        if not soup: break
-        cards = soup.select("div.doctor-card, div[class*='doctor-info'], div[class*='DoctorCard']")
-        if not cards: break
-        for c in cards:
-            name   = txt(c.select_one("h2,h3,.doc-name,a[class*='name']"))
-            spec   = txt(c.select_one(".speciality,.specialty,span[class*='spec']"))
-            clinic = txt(c.select_one(".hospital-name,.clinic-name,span[class*='hospital']"))
-            addr   = txt(c.select_one(".address,span[class*='address'],.location"))
-            ph_el  = c.select_one("a[href^='tel:']")
-            phone  = ph_el["href"].replace("tel:","").strip() if ph_el else ""
-            if name and len(name) > 2:
-                results.append({"Name": name, "Specialty": spec, "Clinic": clinic,
-                                 "Phone": phone, "Address": addr, "Source": "Marham.pk"})
-        time.sleep(random.uniform(1.5, 3))
-        if not soup.select_one("a[rel='next'],a.next,li.next a"): break
     return results
 
-def doctors_oladoc(city):
-    results = []
-    for page in range(1, 8):
-        url = f"https://oladoc.com/pakistan/{slug(city)}/doctors" + (f"?page={page}" if page > 1 else "")
-        soup = fetch(url)
-        if not soup: break
-        cards = soup.select("div.doctor-card,div[class*='DoctorCard'],li[class*='doctor']")
-        if not cards: break
-        for c in cards:
-            name   = txt(c.select_one("h2,h3,h4,.doctor-name"))
-            spec   = txt(c.select_one(".speciality,.specialization,span[class*='spec']"))
-            clinic = txt(c.select_one(".clinic,.hospital,span[class*='clinic']"))
-            addr   = txt(c.select_one(".address,.location,span[class*='loc']"))
-            ph_el  = c.select_one("a[href^='tel:']")
 
+def get_phone(place_id):
+    try:
+        r = requests.get(
+            "https://maps.googleapis.com/maps/api/place/details/json",
+            params={"place_id": place_id, "fields": "formatted_phone_number", "key": API_KEY},
+            timeout=10
+        )
+        return r.json().get("result", {}).get("formatted_phone_number", "")
+    except:
+        return ""
+
+
+def search_doctors(city):
+    log.info(f"  [Doctors] Searching Google Places for {city}...")
+    all_places = []
+    seen_ids = set()
+
+    for query in DOCTOR_QUERIES:
+        places = places_search(query, city)
+        for p in places:
+            pid = p.get("place_id")
+            if pid and pid not in seen_ids:
+                seen_ids.add(pid)
+                all_places.append(p)
+        time.sleep(1)
+
+    log.info(f"  [Doctors] Found {len(all_places)} places, fetching phone numbers...")
+
+    results = []
+    for i, place in enumerate(all_places):
+        name    = place.get("name", "")
+        address = place.get("formatted_address", "")
+        pid     = place.get("place_id", "")
+        rating  = str(place.get("rating", ""))
+        phone   = get_phone(pid) if pid else ""
+        time.sleep(0.3)
+
+        if (i + 1) % 20 == 0:
+            log.info(f"  [Doctors] Processed {i+1}/{len(all_places)}...")
+
+        results.append({
+            "Name": name,
+            "Specialty": "",
+            "Clinic": name,
+            "Phone": phone,
+            "Address": address,
+            "Rating": rating,
+            "Source": "Google Places"
+        })
+
+    log.info(f"  [Doctors] {len(results)} doctors collected for {city}")
+    return results
+
+
+def search_stores(city):
+    log.info(f"  [Stores] Searching Google Places for {city}...")
+    all_places = []
+    seen_ids = set()
+
+    for query in STORE_QUERIES:
+        places = places_search(query, city)
+        for p in places:
+            pid = p.get("place_id")
+            if pid and pid not in seen_ids:
+                seen_ids.add(pid)
+                all_places.append(p)
+        time.sleep(1)
+
+    log.info(f"  [Stores] Found {len(all_places)} places, fetching phone numbers...")
+
+    results = []
+    for i, place in enumerate(all_places):
+        name    = place.get("name", "")
+        address = place.get("formatted_address", "")
+        pid     = place.get("place_id", "")
+        rating  = str(place.get("rating", ""))
+        phone   = get_phone(pid) if pid else ""
+        time.sleep(0.3)
+
+        if (i + 1) % 20 == 0:
+            log.info(f"  [Stores] Processed {i+1}/{len(all_places)}...")
+
+        results.append({
+            "Name": name,
+            "Type": "Medical Store / Pharmacy",
+            "Phone": phone,
+            "Address": address,
+            "Rating": rating,
+            "Source": "Google Places"
+        })
+
+    log.info(f"  [Stores] {len(results)} stores collected for {city}")
+    return results
+
+
+BORDER = Border(
+    left=Side(style="thin", color="C8D8EE"),
+    right=Side(style="thin", color="C8D8EE"),
+    top=Side(style="thin", color="C8D8EE"),
+    bottom=Side(style="thin", color="C8D8EE"),
+)
+
+
+def write_title(ws, label, total, ncols):
+    c = ws.cell(row=1, column=1, value=f"{label}  |  Total: {total}")
+    c.font = Font(bold=True, name="Calibri", size=13, color="1B3A6B")
+    c.alignment = Alignment(horizontal="left", vertical="center")
+    ws.merge_cells(start_row=1, start_column=1, end_row=1, end_column=ncols)
+    ws.row_dimensions[1].height = 26
+
+
+def write_headers(ws, cols, widths, color):
+    fill = PatternFill("solid", start_color=color)
+    font = Font(bold=True, color="FFFFFF", name="Calibri", size=11)
+    for ci, (h, w) in enumerate(zip(cols, widths), 1):
+        c = ws.cell(row=2, column=ci, value=h)
+        c.font = font
+        c.fill = fill
+        c.alignment = Alignment(horizontal="center", vertical="center")
+        c.border = BORDER
+        ws.column_dimensions[get_column_letter(ci)].width = w
+    ws.row_dimensions[2].height = 22
+
+
+def write_data(ws, rows, vals_fn):
+    alt = PatternFill("solid", start_color="EDF4FF")
+    for ri, row in enumerate(rows, 3):
+        fill = alt if ri % 2 == 0 else PatternFill()
+        for ci, v in enumerate(vals_fn(ri - 3, row), 1):
+            c = ws.cell(row=ri, column=ci, value=v)
+            c.font = Font(name="Calibri", size=10)
+            c.fill = fill
+            c.alignment = Alignment(vertical="center", wrap_text=True)
+            c.border = BORDER
+        ws.row_dimensions[ri].height = 18
+    ws.freeze_panes = "A3"
+
+
+def make_excel(city, doctors, stores):
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    wb = openpyxl.Workbook()
+    wb.remove(wb.active)
+
+    ws1 = wb.create_sheet("Doctors")
+    cols1   = ["#", "Name", "Phone", "Address", "Rating", "Source"]
+    widths1 = [5, 32, 18, 45, 8, 14]
+    write_title(ws1, f"{city} — Doctors", len(doctors), len(cols1))
+    write_headers(ws1, cols1, widths1, "1B3A6B")
+    write_data(ws1, doctors, lambda i, d: [
+        i+1, d["Name"], d["Phone"], d["Address"], d["Rating"], d["Source"]
+    ])
+
+    ws2 = wb.create_sheet("Medical Stores")
+    cols2   = ["#", "Store Name", "Type", "Phone", "Address", "Rating", "Source"]
+    widths2 = [5, 32, 22, 18, 40, 8, 14]
+    write_title(ws2, f"{city} — Medical Stores & Pharmacies", len(stores), len(cols2))
+    write_headers(ws2, cols2, widths2, "1A5C3A")
+    write_data(ws2, stores, lambda i, s: [
+        i+1, s["Name"], s["Type"], s["Phone"], s["Address"], s["Rating"], s["Source"]
+    ])
+
+    path = os.path.join(OUTPUT_DIR, f"{city}.xlsx")
+    wb.save(path)
+    log.info(f"Saved: {path} ({len(doctors)} doctors, {len(stores)} stores)")
+
+
+def main():
+    if not API_KEY:
+        log.error("GOOGLE_API_KEY not set! Add it as a GitHub secret.")
+        exit(1)
+
+    city_filter = os.environ.get("CITY", "").strip()
+    cities = [c for c in PUNJAB_CITIES if c.lower() == city_filter.lower()] if city_filter else PUNJAB_CITIES
+
+    log.info(f"Starting scrape for {len(cities)} cities")
+
+    for city in cities:
+        log.info(f"\n{'='*50}\nProcessing: {city}\n{'='*50}")
+        doctors = search_doctors(city)
+        stores  = search_stores(city)
+        make_excel(city, doctors, stores)
+
+    log.info("All done!")
+
+
+if __name__ == "__main__":
+    
