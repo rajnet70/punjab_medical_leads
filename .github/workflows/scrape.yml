@@ -35,6 +35,8 @@ jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repo
@@ -67,4 +69,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output/*.xlsx
           git diff --staged --quiet || git commit -m "Update leads: ${{ github.event.inputs.city || 'All Punjab' }} $(date +'%Y-%m-%d')"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
