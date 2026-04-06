@@ -54,7 +54,7 @@ jobs:
         env:
           CITY: ${{ github.event.inputs.city }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python lahore_salons_scraper.py
+        run: python lahore_mobile_stores_scraper.py
 
       - name: Upload Excel files as artifacts
         uses: actions/upload-artifact@v4
