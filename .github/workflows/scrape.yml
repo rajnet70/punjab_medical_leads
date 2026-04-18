@@ -4,32 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       city:
-        description: 'Scrape a single city (leave empty to scrape ALL 20 cities)'
-        required: false
-        default: ''
+        description: 'Select city to scrape'
+        required: true
+        default: 'Lahore'
         type: choice
         options:
-          - ''
           - Lahore
-          - Faisalabad
           - Rawalpindi
           - Gujranwala
           - Multan
-          - Bahawalpur
           - Sargodha
           - Sialkot
-          - Sheikhupura
-          - Rahim Yar Khan
-          - Jhang
+          - Bahawalpur
           - Gujrat
           - Sahiwal
-          - Okara
-          - Kasur
-          - Dera Ghazi Khan
-          - Muzaffargarh
-          - Chiniot
-          - Hafizabad
-          - Mandi Bahauddin
 
 jobs:
   scrape:
@@ -54,19 +42,19 @@ jobs:
         env:
           CITY: ${{ github.event.inputs.city }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python lahore_doctor_counter.py
+        run: python scraper.py
 
-      - name: Upload Excel files as artifacts
+      - name: Upload Excel file as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Punjab-Medical-Leads
-          path: output/*.xlsx
+          name: ${{ github.event.inputs.city }}-Doctors
+          path: output/${{ github.event.inputs.city }}_Doctors.xlsx
           retention-days: 30
 
-      - name: Commit Excel files to repo
+      - name: Commit Excel file to repo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output/*.xlsx
-          git diff --staged --quiet || git commit -m "Update leads: ${{ github.event.inputs.city || 'All Punjab' }} $(date +'%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "Add ${{ github.event.inputs.city }} doctors data $(date +'%Y-%m-%d')"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
