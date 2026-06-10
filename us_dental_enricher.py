@@ -320,11 +320,11 @@ def enrich():
         'Score', 'Tier'
     ]
     widths = [
-        5, 36, 16, 42, 18,
-        26, 8, 10, 22,
+        5, 38, 16, 48, 20,
+        30, 8, 10, 24,
         14, 14,
-        36, 12, 16,
-        12, 12, 24, 28,
+        50, 14, 16,
+        14, 12, 36, 40,
         8, 10
     ]
 
@@ -394,6 +394,7 @@ def enrich():
             # Purple tint for enriched columns
             if ci >= 12 and ci <= 18:
                 c.fill = PatternFill('solid', start_color='0f0820') if ri % 2 == 0 else PatternFill('solid', start_color='120a25')
+                c.font = Font(name='Calibri', size=10, color='FFFFFF')
             else:
                 c.fill = rfill
             c.alignment = Alignment(vertical='center', wrap_text=True)
@@ -403,7 +404,7 @@ def enrich():
         tier_cell = ws.cell(row=ri, column=20)
         tier_cell.fill = HIGH_FILL if tier_val=='High' else (MED_FILL if tier_val=='Medium' else LOW_FILL)
         tier_cell.font = Font(name='Calibri', size=10, bold=True)
-        ws.row_dimensions[ri].height = 20
+        ws.row_dimensions[ri].height = 30
 
     ws.freeze_panes = 'A4'
 
