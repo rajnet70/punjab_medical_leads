@@ -1,0 +1,112 @@
+name: US Dental Clinic Scraper
+
+on:
+  workflow_dispatch:
+    inputs:
+      scrape_type:
+        description: 'What to scrape'
+        required: true
+        default: 'Dental Clinics'
+        type: choice
+        options:
+          - Dental Clinics
+          - Texas Suppliers
+      city:
+        description: 'Select US city (Dental Clinics only)'
+        required: false
+        default: 'New York'
+        type: choice
+        options:
+          - New York
+          - Los Angeles
+          - Chicago
+          - Houston
+          - Phoenix
+          - Philadelphia
+          - San Antonio
+          - San Diego
+          - Dallas
+          - San Jose
+      limit:
+        description: 'Number of results to scrape'
+        required: true
+        default: '50'
+        type: choice
+        options:
+          - '25'
+          - '50'
+          - '100'
+          - '200'
+          - '500'
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml openpyxl
+
+      - name: Run Dental Clinic Scraper
+        if: ${{ github.event.inputs.scrape_type == 'Dental Clinics' }}
+        env:
+          CITY: ${{ github.event.inputs.city }}
+          LIMIT: ${{ github.event.inputs.limit }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python us_dental_scraper.py
+
+      - name: Run Dental Clinic Enricher
+        if: ${{ github.event.inputs.scrape_type == 'Dental Clinics' }}
+        env:
+          CITY: ${{ github.event.inputs.city }}
+        run: python us_dental_enricher.py
+
+      - name: Run Texas Supplier Scraper
+        if: ${{ github.event.inputs.scrape_type == 'Texas Suppliers' }}
+        env:
+          LIMIT: ${{ github.event.inputs.limit }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python texas_supplier_scraper.py
+
+      - name: Upload Dental Clinics Raw
+        if: ${{ github.event.inputs.scrape_type == 'Dental Clinics' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.city }}-Dental-Clinics-Raw
+          path: output/${{ github.event.inputs.city }}_Dental_Clinics.xlsx
+          retention-days: 30
+
+      - name: Upload Dental Clinics Enriched
+        if: ${{ github.event.inputs.scrape_type == 'Dental Clinics' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.inputs.city }}-Dental-Clinics-Enriched
+          path: output/${{ github.event.inputs.city }}_Dental_Clinics_Enriched.xlsx
+          retention-days: 30
+
+      - name: Upload Texas Suppliers
+        if: ${{ github.event.inputs.scrape_type == 'Texas Suppliers' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Texas-Dental-Suppliers
+          path: output/Texas_Dental_Suppliers.xlsx
+          retention-days: 30
+
+      - name: Commit files to repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/*.xlsx
+          git diff --staged --quiet || git commit -m "Add scrape results $(date +'%Y-%m-%d')"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
