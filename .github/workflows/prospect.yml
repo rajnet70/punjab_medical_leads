@@ -1,0 +1,40 @@
+name: LeadFlow ICP Prospecting
+
+# Finds LeadFlow's own ideal clients (regulatory/QA consultancies).
+# Manual trigger + weekly on Mondays.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"   # 06:00 UTC every Monday
+
+jobs:
+  prospect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # allow the workflow to commit results back
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Run ICP discovery scraper
+        run: python icp_scraper.py
+
+      - name: Run ICP enrichment + signal scoring
+        run: python enrich.py
+        continue-on-error: true
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add output/*.csv
+          git diff --staged --quiet || git commit -m "Update ICP prospects ($(date +'%Y-%m-%d'))"
+          git push
