@@ -243,8 +243,15 @@ def compute_signal(desc: str, prof: dict, full_text: str) -> tuple[str, str]:
 
     # --- Tiering: spend signals gate the top tiers ---
     has_spend = spend_count >= 1 or bd_hire
-    if large and score < 3:
-        tier = "❌ LOW FIT"
+    if large:
+        # HARD CAP: a larger/established firm is not the boutique ICP — never HOT/STRONG,
+        # regardless of how many spend signals its (often bigger) marketing shows.
+        if score >= 4:
+            tier = "✅ GOOD"
+        elif score >= 1:
+            tier = "⚪ QUALIFY"
+        else:
+            tier = "❌ LOW FIT"
     elif score >= 7 and has_spend:
         tier = "🔥 HOT"          # strong fit + clear spend/growth investment
     elif score >= 5 and has_spend:
@@ -280,6 +287,16 @@ def enrich_one(row: dict) -> dict:
 
     prof = extract_profile(combined_text, combined_html, row.get("company", "")) if combined_text else empty_profile()
 
+    # WRONG-COMPANY GUARD: if the scraped page doesn't actually match the listed
+    # company (redirect / parked / acquired domain), suppress the scraped contact
+    # and founder so we don't attach a DIFFERENT company's details.
+    company_verified = True
+    if combined_text:
+        company_verified = verify_company_match(row.get("company", ""), combined_text)
+        if not company_verified:
+            prof = empty_profile()   # discard wrong-company data
+    row["company_verified"] = "yes" if company_verified else "NO - verify manually (site mismatch)"
+
     tier, why = compute_signal(row.get("description", ""), prof, combined_text)
 
     row["signal"] = tier
@@ -291,6 +308,24 @@ def enrich_one(row: dict) -> dict:
     row["linkedin"] = prof["linkedin"] or ""
     row["enriched"] = "yes" if combined_text else "site unreachable"
     return row
+
+
+def verify_company_match(company_name: str, combined_text: str) -> bool:
+    """Free workaround for the wrong-website bug: confirm the scraped page actually
+    belongs to the listed company by checking its distinctive name words appear.
+    If not (e.g. a redirect to a different company), we suppress the scraped
+    contact/founder data rather than attaching the WRONG company's details."""
+    generic = {"ltd", "gmbh", "ag", "inc", "consulting", "consultancy", "group", "the",
+               "and", "services", "solutions", "medical", "medtech", "regulatory",
+               "quality", "bio", "life", "sciences", "pharma", "limited", "llc", "bv",
+               "aps", "ab", "cro", "co", "as"}
+    text = combined_text.lower()
+    name_words = [w.lower().strip(".,") for w in company_name.split()
+                  if w.lower().strip(".,") not in generic and len(w) > 2]
+    if not name_words:
+        return company_name.lower() in text
+    matches = sum(1 for w in name_words if w in text)
+    return (matches / len(name_words)) >= 0.5
 
 
 def empty_profile():
@@ -323,7 +358,7 @@ def main():
     enriched.sort(key=lambda r: tier_order.get(r.get("signal", "⚪ QUALIFY"), 3))
 
     fields = ["company", "country", "signal", "signal_reason", "founder", "role",
-              "founded_year", "public_email", "linkedin", "icp_signals",
+              "founded_year", "public_email", "linkedin", "company_verified", "icp_signals",
               "description", "website", "enriched", "source"]
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
