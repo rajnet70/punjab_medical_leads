@@ -22,17 +22,21 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-# --- Target countries (all confirmed public SimplerQMS directories) ---
-# Both medical-device and pharma directories are included where they exist,
-# since regulatory consultancies often serve both.
+# --- Full SimplerQMS directory set (medical-device AND pharmaceutical, all countries) ---
+# Both directory types are included because regulatory/QA consultancies often serve both,
+# and the two lists contain largely DIFFERENT firms — roughly doubling the yield.
 SOURCES = {
-    "Switzerland":   ["https://simplerqms.com/consultants/medical-device-switzerland/"],
-    "Germany":       ["https://simplerqms.com/consultants/medical-device-germany/"],
-    "UK & Ireland":  ["https://simplerqms.com/consultants/medical-device-consulting-firms/"],
-    "Denmark":       ["https://simplerqms.com/consultants/medical-device-denmark/",
-                      "https://simplerqms.com/consultants/pharmaceutical-denmark/"],
-    "Netherlands":   ["https://simplerqms.com/consultants/medical-device-netherlands/",
-                      "https://simplerqms.com/consultants/pharmaceutical-netherlands/"],
+    "Switzerland":  ["https://simplerqms.com/consultants/medical-device-switzerland/",
+                     "https://simplerqms.com/consultants/pharmaceutical-switzerland/"],
+    "UK & Ireland": ["https://simplerqms.com/consultants/medical-device-consulting-firms/",
+                     "https://simplerqms.com/consultants/pharmaceutical-consulting-uk-ie/"],
+    "Denmark":      ["https://simplerqms.com/consultants/medical-device-denmark/",
+                     "https://simplerqms.com/consultants/pharmaceutical-denmark/"],
+    "Netherlands":  ["https://simplerqms.com/consultants/medical-device-netherlands/",
+                     "https://simplerqms.com/consultants/pharmaceutical-netherlands/"],
+    "Sweden":       ["https://simplerqms.com/consultants/medical-device-sweden/",
+                     "https://simplerqms.com/consultants/pharmaceutical-sweden/"],
+    "Austria":      ["https://simplerqms.com/consultants/top-pharmaceutical-consulting-firms-in-at/"],
 }
 
 OUTPUT_DIR = Path("output")
