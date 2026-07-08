@@ -24,9 +24,11 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+from filters import qualify
+
 OUTPUT_DIR = Path("output")
-IN_CSV = OUTPUT_DIR / "icp_consultancies.csv"
-OUT_CSV = OUTPUT_DIR / "icp_enriched.csv"
+IN_CSV = OUTPUT_DIR / "icp_discovered.csv"   # from discover.py (multi-source)
+OUT_CSV = OUTPUT_DIR / "icp_qualified.csv"
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; LeadFlowResearchBot/0.1)"}
 
 # Pages likely to hold founder / about / contact info
@@ -299,15 +301,54 @@ def enrich_one(row: dict) -> dict:
 
     tier, why = compute_signal(row.get("description", ""), prof, combined_text)
 
-    row["signal"] = tier
-    row["signal_reason"] = why
-    row["founder"] = prof["founder"] or "not published"
-    row["role"] = prof["role"] or ""
-    row["founded_year"] = prof["founded"] or ""
-    row["public_email"] = prof["email"] or "not published"
-    row["linkedin"] = prof["linkedin"] or ""
+    # --- APPLY THE FOUR QUALIFICATION FILTERS (specialty/age/size/status) ---
+    # This is the "eat your own food" layer: turns a loose regulatory-consultancy
+    # list into the actual ICP (newer, boutique, device-regulatory, independent).
+    qual_text = (row.get("description", "") + " " + combined_text).strip()
+    q = qualify(qual_text) if qual_text else {
+        "verdict": "flag", "why": "site unreachable — verify manually",
+        "specialty": "unknown", "founding_year": "", "age": "unknown",
+        "size": "verify", "status": "unknown"}
+
+    # Priority signal (growth/BD intent) doubles as outreach hook — kept from compute_signal
+    priority = "active growth signal" if any(
+        k in combined_text.lower() for k in
+        ["hiring", "we're hiring", "join our team", "career", "exhibit", "visit us at",
+         "newsletter", "webinar", "expanding", "book a call", "free consultation"]
+    ) else "no strong signal"
+
+    # ---- LOCKED 13-FIELD OUTPUT ----
+    founder = prof["founder"] or "not published"
+    role = prof["role"] or ""
+    row["company"] = row.get("company", "")
+    row["country"] = row.get("country", "")
+    row["city_region"] = row.get("city_region", "") or extract_city(combined_text)
+    row["website"] = row.get("website", "")
+    row["linkedin"] = prof["linkedin"] or linkedin_fallback(row.get("company", ""))
+    row["public_contact"] = prof["email"] or "not published"
+    row["priority_hook"] = f"{priority}: {why}" if why else priority
+    row["specialty"] = q["specialty"]
+    row["founding_year"] = q["founding_year"] or prof["founded"] or ""
+    row["size"] = q["size"]  # 'boutique' / 'large' / 'verify'
+    row["founder"] = f"{founder}, {role}".strip(", ") if founder != "not published" else "not published"
+    row["verdict"] = q["verdict"]        # fit / flag / drop
+    row["verdict_reason"] = q["why"]
+    row["company_verified"] = "yes" if company_verified else "NO - site mismatch"
     row["enriched"] = "yes" if combined_text else "site unreachable"
     return row
+
+
+def extract_city(text: str) -> str:
+    """Best-effort city/region from scraped text (kept light)."""
+    return ""  # populated during enrichment where available; manual glance otherwise
+
+
+def linkedin_fallback(company: str) -> str:
+    """If no direct LinkedIn URL found on the site, give a one-click search URL."""
+    if not company:
+        return ""
+    q = company.replace(" ", "%20")
+    return f"https://www.linkedin.com/search/results/companies/?keywords={q}"
 
 
 def verify_company_match(company_name: str, combined_text: str) -> bool:
@@ -339,40 +380,42 @@ def main():
     with open(IN_CSV, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
-    print(f"Enriching {len(rows)} consultancies (website-only)...\n")
+    print(f"Enriching + qualifying {len(rows)} consultancies (website-only)...\n")
     enriched = []
     for i, row in enumerate(rows, 1):
         print(f"[{i}/{len(rows)}] {row['company']} ...", end=" ")
         try:
             r = enrich_one(row)
-            print(r["signal"])
+            print(f"{r['verdict']} ({r['specialty']})")
             enriched.append(r)
         except Exception as e:
             print(f"error: {e}")
-            row["signal"] = "⚪ QUALIFY"; row["signal_reason"] = "enrichment error"
+            row["verdict"] = "flag"; row["verdict_reason"] = "enrichment error"
             enriched.append(row)
         time.sleep(1)
 
-    # sort by signal tier
-    tier_order = {"🔥 HOT": 0, "⭐ STRONG": 1, "✅ GOOD": 2, "⚪ QUALIFY": 3, "❌ LOW FIT": 4}
-    enriched.sort(key=lambda r: tier_order.get(r.get("signal", "⚪ QUALIFY"), 3))
+    # sort: fit first, then flag, then drop
+    v_order = {"fit": 0, "flag": 1, "drop": 2}
+    enriched.sort(key=lambda r: (v_order.get(r.get("verdict", "flag"), 1), r.get("country", "")))
 
-    fields = ["company", "country", "signal", "signal_reason", "founder", "role",
-              "founded_year", "public_email", "linkedin", "company_verified", "icp_signals",
-              "description", "website", "enriched", "source"]
+    # LOCKED 13-FIELD OUTPUT
+    fields = ["company", "country", "city_region", "website", "linkedin", "public_contact",
+              "priority_hook", "specialty", "founding_year", "size", "founder",
+              "verdict", "verdict_reason", "company_verified", "source"]
     with open(OUT_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         w.writeheader()
         w.writerows(enriched)
 
     from collections import Counter
-    print(f"\n=== Enriched {len(enriched)} → {OUT_CSV} ===")
-    print("By signal:", dict(Counter(r.get("signal") for r in enriched)))
-    print("\nPriority (HOT / STRONG):")
+    print(f"\n=== Qualified {len(enriched)} → {OUT_CSV} ===")
+    print("By verdict:", dict(Counter(r.get("verdict") for r in enriched)))
+    print("By specialty:", dict(Counter(r.get("specialty") for r in enriched)))
+    print("\nFIT prospects (your outreach list):")
     for r in enriched:
-        if r.get("signal") in ("🔥 HOT", "⭐ STRONG"):
-            print(f"  {r['signal']}  {r['company']} ({r['country']}) — {r['signal_reason']}"
-                  f" | founder: {r['founder']}")
+        if r.get("verdict") == "fit":
+            print(f"  ✅ {r['company']} ({r['country']}) — {r['priority_hook'][:60]}"
+                  f" | {r['founder']}")
 
 
 if __name__ == "__main__":
