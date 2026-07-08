@@ -24,12 +24,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
-      - name: Run ICP discovery scraper
-        run: python icp_scraper.py
+      - name: Run multi-source discovery
+        run: python discover.py
 
-      - name: Run ICP enrichment + signal scoring
+      - name: Enrich + qualify (4 filters)
         run: python enrich.py
-        continue-on-error: true
 
       - name: Commit results
         run: |
