@@ -128,8 +128,6 @@ COUNTRY_MAP = {"deutschland": "Germany", "österreich": "Austria", "osterreich":
 def parse_constares(html, list_label):
     soup = BeautifulSoup(html, "html.parser")
     out = []
-    # Each firm is an <a> to its site, with text = company name; the surrounding
-    # text carries "City - Country". Parse anchor + trailing text line.
     for a in soup.find_all("a", href=True):
         href = a["href"]
         name = a.get_text(strip=True)
@@ -147,7 +145,12 @@ def parse_constares(html, list_label):
             if k in line:
                 country = v
                 break
-        out.append({"company": name, "country": country, "website": href,
+        # CLEAN the name: strip trailing " - City - Country" that got baked in
+        clean_name = re.split(r"\s*[-–]\s*", name)[0].strip()
+        # if splitting nuked it (name legitimately has a dash), keep original if too short
+        if len(clean_name) < 3:
+            clean_name = name
+        out.append({"company": clean_name, "country": country, "website": href,
                     "description": f"Listed in Constares {list_label} (DACH).",
                     "source": f"Constares ({list_label})"})
     return out
@@ -165,8 +168,14 @@ def parse_generic_links(html, source_name, country=""):
             continue
         if not href.startswith("http"):
             continue
-        if any(s in href for s in ["eudracon", "umbrex", "facebook", "twitter", "linkedin",
-                                   "mailto", "youtube", "instagram"]):
+        # Reject when the link text is itself a URL (Umbrex bug) or nav junk
+        if name.lower().startswith(("http", "www.")) or "/" in name or ".com" in name.lower():
+            continue
+        if name.lower() in ("read more", "learn more", "visit", "website", "here",
+                            "click here", "view", "details", "home", "contact"):
+            continue
+        if any(s in href for s in ["facebook", "twitter", "linkedin", "mailto",
+                                   "youtube", "instagram", "umbrex.com", "eudracon"]):
             continue
         key = name.lower()
         if key in seen:

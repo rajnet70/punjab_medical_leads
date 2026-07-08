@@ -116,10 +116,11 @@ def score_specialty(text: str) -> tuple[str, str]:
 # FILTER 2 — AGE (catches old institutions: Billev 1978)
 # ---------------------------------------------------------------------------
 YEAR_PATTERNS = [
-    r"(?:founded|established|since|est\.?|start(?:ed)?|inception)\s*(?:in\s*)?(19\d\d|20\d\d)",
-    r"©\s*(19\d\d|20\d\d)",
+    r"(?:founded|established|since|est\.?|inception|in\s+business\s+since|operating\s+since)\s*(?:in\s*)?(19\d\d|20\d\d)",
     r"(\d+)\s*(?:\+\s*)?years?\s+of\s+(?:experience|expertise|excellence)",
 ]
+# Copyright patterns to EXCLUDE (these are NOT founding years)
+COPYRIGHT_PATTERN = r"(?:©|copyright|&copy;|all rights reserved)\s*©?\s*(?:19\d\d|20\d\d)"
 OLD_THRESHOLD = 2005  # founded before this = likely established institution, flag
 
 
@@ -127,17 +128,18 @@ def score_age(text: str) -> tuple[str, str, str]:
     """Return (verdict, founding_year, reason). verdict: 'newer'|'old'|'unknown'."""
     t = text.lower()
     years = []
-    for pat in YEAR_PATTERNS[:2]:  # explicit founding-year patterns
-        for m in re.finditer(pat, t):
-            y = int(m.group(1))
-            if 1900 <= y <= CURRENT_YEAR:
-                years.append(y)
+
+    # Explicit "founded/established/since [year]" only — NOT copyright years
+    for m in re.finditer(YEAR_PATTERNS[0], t):
+        y = int(m.group(1))
+        if 1900 <= y <= CURRENT_YEAR:
+            years.append(y)
 
     # "X years of experience" → infer approximate age
-    for m in re.finditer(YEAR_PATTERNS[2], t):
+    for m in re.finditer(YEAR_PATTERNS[1], t):
         try:
             n = int(m.group(1))
-            if 15 <= n <= 130:  # "125 years combined" style
+            if 15 <= n <= 130:
                 years.append(CURRENT_YEAR - n)
         except ValueError:
             pass
@@ -145,7 +147,11 @@ def score_age(text: str) -> tuple[str, str, str]:
     if not years:
         return ("unknown", "", "founding year not stated")
 
-    founded = min(years)  # earliest = founding
+    founded = min(years)
+    # sanity: a "founding year" equal to the current year is almost always a
+    # copyright/date artifact, not a real founding — ignore it
+    if founded >= CURRENT_YEAR:
+        return ("unknown", "", "no reliable founding year (current-year artifact)")
     if founded < OLD_THRESHOLD:
         return ("old", str(founded), f"established institution (founded {founded})")
     return ("newer", str(founded), f"newer firm (founded {founded})")
@@ -161,18 +167,35 @@ LARGE_SIGNALS = [
     "global organizations", "global organisations", "600 professionals",
     "hundreds of employees", "global team", "global presence", "our offices in",
     "network of over", "specialist network", "3,000", "over 100 employees",
-    "100+ employees", "leading consultancy", "leading global",
+    "100+ employees", "leading consultancy", "leading global", "offices in",
+    "countries worldwide", "across the globe", "global leader", "fortune 500",
+    "big four", "big 4", "thousands of", "40 countries", "50 countries",
+    "member firms", "our global", "world's leading",
+]
+# Known enterprise firms that must never pass as boutique
+KNOWN_LARGE = [
+    "ernst & young", "ey.com", "deloitte", "kpmg", "pwc", "pricewaterhouse",
+    "accenture", "mckinsey", "iqvia", "parexel", "icon plc", "labcorp",
+    "thermo fisher", "ul solutions", "emergo by ul", "sgs", "tüv", "tuv ",
+    "bureau veritas", "intertek", "nsf international", "qserve group",
+    "veranex", "aurevia", "qbd group",
 ]
 BOUTIQUE_SIGNALS = [
     "boutique", "small team", "small and specialised", "small and specialized",
     "hands-on", "personalised", "personalized", "founder-led", "one-man",
-    "we are a small", "tailored", "dedicated team of",
+    "we are a small", "tailored", "dedicated team of", "independent consultancy",
 ]
 
 
 def score_size(text: str) -> tuple[str, str]:
     """Return (verdict, reason). verdict: 'boutique'|'large'|'verify'."""
     t = text.lower()
+
+    # Known enterprise names — hard large
+    for name in KNOWN_LARGE:
+        if name in t:
+            return ("large", f"known enterprise firm ({name})")
+
     large = sum(1 for k in LARGE_SIGNALS if k in t)
     boutique = sum(1 for k in BOUTIQUE_SIGNALS if k in t)
 
@@ -189,9 +212,17 @@ def score_size(text: str) -> tuple[str, str]:
 # FILTER 4 — STATUS (catches acquired: Scandinavian CRO, QAdvis, Medidee)
 # ---------------------------------------------------------------------------
 ACQUIRED_SIGNALS = [
-    "now part of", "part of the", "a company of", "acquired by", "member of the group",
-    "now veranex", "part of veranex", "joined the", "merged with", "merged into",
-    "an aurevia", "part of aurevia", "a subsidiary of", "wholly owned",
+    "acquired by", "now part of veranex", "part of veranex", "an aurevia company",
+    "part of the aurevia", "now part of the", "has been acquired", "was acquired",
+    "a subsidiary of", "wholly owned subsidiary", "now part of aurevia",
+    "part of the veranex", "joined forces with", "has merged with", "merged into",
+    "now trading as part of", "a company of the",
+]
+# Guard phrases — if the "part of" is one of these innocent uses, it's NOT acquisition
+ACQUIRED_FALSE_FRIENDS = [
+    "part of our", "part of the team", "part of the process", "part of the solution",
+    "part of your", "part of the journey", "part of a comprehensive", "be part of",
+    "part of the eu", "part of the world", "part of the value", "part of the family",
 ]
 
 
@@ -200,6 +231,11 @@ def score_status(text: str) -> tuple[str, str]:
     t = text.lower()
     for sig in ACQUIRED_SIGNALS:
         if sig in t:
+            # make sure it's not an innocent "part of our team" style phrase
+            idx = t.find(sig)
+            window = t[max(0, idx - 5):idx + len(sig) + 15]
+            if any(ff in window for ff in ACQUIRED_FALSE_FRIENDS):
+                continue
             return ("acquired", f"appears acquired/part of larger group ('{sig}')")
     return ("independent", "independent")
 
