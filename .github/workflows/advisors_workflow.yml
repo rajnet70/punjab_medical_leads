@@ -1,0 +1,37 @@
+name: US Advisors Data Pipeline
+
+# Free US financial-advisor data test (SEC IAPD + website contact enrichment).
+# Manual trigger — run on demand from the Actions tab.
+on:
+  workflow_dispatch:
+
+jobs:
+  advisors:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # allow committing the output CSVs back to the repo
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch advisors (SEC IAPD, one state)
+        run: python advisors_fetch.py
+
+      - name: Enrich contacts (website-only, free)
+        run: python advisors_enrich.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add *.csv
+          git diff --staged --quiet || git commit -m "Update advisor data ($(date +'%Y-%m-%d'))"
+          git push
