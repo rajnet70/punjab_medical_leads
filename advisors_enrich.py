@@ -72,10 +72,39 @@ def fetch(url):
     return None
 
 
+def find_website(firm_name, city, state):
+    """Look up a firm's website via DuckDuckGo HTML (no API key needed).
+    Returns best-guess URL or ''."""
+    q = f"{firm_name} {city} {state} financial advisor"
+    try:
+        r = requests.get("https://html.duckduckgo.com/html/",
+                         params={"q": q}, headers=HEADERS, timeout=TIMEOUT)
+        if r.status_code != 200:
+            return ""
+        soup = BeautifulSoup(r.text, "html.parser")
+        for a in soup.select("a.result__url, a.result__a"):
+            href = a.get("href", "")
+            # skip aggregators/directories — we want the firm's own site
+            if any(b in href for b in ["adviserinfo", "sec.gov", "finra", "brokercheck",
+                                       "linkedin", "facebook", "bloomberg", "yelp",
+                                       "zoominfo", "dnb.com", "bbb.org", "duckduckgo"]):
+                continue
+            if href.startswith("http"):
+                return href.split("?")[0]
+    except Exception:
+        pass
+    return ""
+
+
 def enrich_firm(firm):
     website = firm.get("website", "").strip()
     if not website:
-        return firm  # no site to enrich (SEC data has no website; needs search — see note)
+        # SEC data has no website — look it up first
+        website = find_website(firm.get("firm", ""), firm.get("city", ""), firm.get("state", ""))
+        firm["website"] = website
+        time.sleep(0.5)
+    if not website:
+        return firm  # still nothing found
 
     base = website if website.startswith("http") else "https://" + website
     emails, phones = [], []
