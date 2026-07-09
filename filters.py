@@ -99,15 +99,25 @@ def score_specialty(text: str) -> tuple[str, str]:
         return ("device", f"clear device-regulatory focus ({device_hits} device terms)")
 
     # Weak device, strong wrong-niche → wrong specialty
-    if wrong_total >= 2 and device_hits <= 1:
+    if wrong_total >= 2 and device_hits == 0:
         niche = max([("pharmacovigilance", pv_hits), ("pharmacometrics", pm_hits),
                      ("functional-safety", fs_hits), ("pharma-only", pharma_hits)],
                     key=lambda x: x[1])
         return ("wrong", f"{niche[0]} focus, not medical-device regulatory")
 
-    # Some device terms, not dominant
+    # Some device terms present → give benefit of the doubt as ADJACENT (flag for
+    # human review) rather than dropping. Catches real device firms with thin
+    # website text (e.g. Regivet, Quality RA) that would otherwise be lost.
     if device_hits >= 1:
         return ("adjacent", f"limited device focus ({device_hits} device terms) — verify")
+
+    # A regulatory/quality consultancy with NO device terms and NO strong wrong-niche
+    # is ambiguous, not clearly wrong — flag as adjacent for review rather than drop.
+    reg_context = any(k in t for k in ["regulatory affairs", "quality assurance",
+                                       "quality management", "regulatory consulting",
+                                       "qms", "regulatory compliance"])
+    if reg_context and wrong_total < 2:
+        return ("adjacent", "regulatory/quality consultancy — device focus unclear, verify")
 
     return ("wrong", "no clear medical-device regulatory focus")
 

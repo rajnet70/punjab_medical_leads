@@ -55,10 +55,11 @@ SIMPLERQMS = {
 
 # ---------------------------------------------------------------------------
 # SOURCE 2/3 — Constares (DE/AT/CH). Plain-HTML article lists, each firm linked.
+# NOTE: CRO list REMOVED — it's ~89% clinical research orgs (drug trials), not
+# device-regulatory. It polluted the pool with non-ICP firms. RA/Quality kept.
 # ---------------------------------------------------------------------------
 CONSTARES = [
     "https://www.constares.com/industry-information/medical-regulatory-affairs-consulting-services-list.html",
-    "https://www.constares.com/industry-information/clinical-research-organizations-list.html",
 ]
 
 # ---------------------------------------------------------------------------
@@ -70,6 +71,24 @@ EUDRACON = ["https://eudracon.eu/contact/our-members/"]
 # SOURCE 5 — Umbrex medical-device firms
 # ---------------------------------------------------------------------------
 UMBREX = ["https://umbrex.com/resources/top-consulting-firms/top-medical-device-consulting-firms/"]
+
+# ---------------------------------------------------------------------------
+# SOURCE 6 — EAAR (European Association of Authorised Representatives)
+# AR firms are EXACTLY the ICP: device-regulatory service providers. Plain HTML,
+# lists member domain + email. The description carries "Authorised Representative
+# for medical devices" so the specialty filter reliably tags them 'device'.
+# ---------------------------------------------------------------------------
+EAAR = ["https://www.eaarmed.org/members/"]
+
+# ---------------------------------------------------------------------------
+# SOURCE 7 — NoBoCap (Repository of EU Regulatory Support)
+# The RICHEST ICP source: a curated repository of EU device-regulatory support
+# firms, each with a description of services (MDR/IVDR/ISO 13485/etc). Plain HTML.
+# Includes AKRA TEAM, be-on-Quality, Complear, Qualix, Sertika, SQR, MD101, IMed,
+# Verstappen, HQ Vector, DM Experts, Covartim, and more. Enterprise firms (QbD)
+# auto-drop via size filter; boutiques become FIT after enrichment.
+# ---------------------------------------------------------------------------
+NOBOCAP = ["https://nobocap.eu/repository-of-eu-regulatory-support/"]
 
 
 def fetch(url):
@@ -157,6 +176,78 @@ def parse_constares(html, list_label):
 
 
 # ---------- Generic member-list parser (eudracon, umbrex) ----------
+def parse_nobocap(html, source_name="NoBoCap"):
+    """NoBoCap repository: firm name (heading) + service description paragraph.
+    Richest ICP source — device-regulatory support providers with descriptions."""
+    soup = BeautifulSoup(html, "html.parser")
+    out = []
+    headers = soup.find_all(["h2", "h3", "h4", "strong", "b"])
+    header_ids = set(id(h) for h in headers)
+    seen = set()
+    for h in headers:
+        name = h.get_text(strip=True)
+        if not name or len(name) < 3 or len(name) > 80:
+            continue
+        low = name.lower()
+        if any(x in low for x in ["repository", "regulatory support", "services", "about",
+                                  "contact", "menu", "search", "filter", "home", "read more"]):
+            continue
+        desc = ""
+        for el in h.next_elements:
+            if getattr(el, "name", None) in ("h2", "h3", "h4", "strong", "b") and id(el) in header_ids:
+                break
+            if getattr(el, "name", None) == "p":
+                desc += " " + el.get_text(" ", strip=True)
+        if low in seen:
+            continue
+        seen.add(low)
+        # try to grab a website link near the header
+        website = ""
+        for el in h.next_elements:
+            if getattr(el, "name", None) in ("h2", "h3", "h4") and id(el) in header_ids:
+                break
+            if getattr(el, "name", None) == "a" and el.get("href", "").startswith("http"):
+                if "nobocap" not in el["href"]:
+                    website = el["href"]
+                    break
+        out.append({"company": name, "country": "", "website": website,
+                    "description": (name + ". " + desc).strip()[:600],
+                    "source": source_name})
+    return out
+
+
+def parse_eaar(html, source_name="EAAR"):
+    """EAAR members page: member domain link (+ adjacent mailto email).
+    AR firms = exact ICP. Company name derived from domain."""
+    soup = BeautifulSoup(html, "html.parser")
+    out = []
+    seen = set()
+    links = soup.find_all("a", href=True)
+    for i, a in enumerate(links):
+        href = a["href"]
+        if href.startswith("mailto:") or not href.startswith("http"):
+            continue
+        if any(s in href for s in ["eaarmed.org", "facebook", "twitter", "linkedin",
+                                   "youtube", "instagram", "lennarthorst"]):
+            continue
+        domain = href.replace("https://", "").replace("http://", "").replace("www.", "").strip("/")
+        domain = domain.split("/")[0]
+        if not domain or domain in seen:
+            continue
+        seen.add(domain)
+        name = domain.split(".")[0].replace("-", " ").title()
+        # adjacent mailto = member email
+        email = ""
+        if i + 1 < len(links) and links[i + 1]["href"].startswith("mailto:"):
+            email = links[i + 1]["href"].replace("mailto:", "")
+        out.append({"company": name, "country": "", "website": href,
+                    "public_contact": email,
+                    "description": f"EAAR member — European Authorised Representative for "
+                                   f"medical devices (MDR/IVDR regulatory service provider). {domain}",
+                    "source": source_name})
+    return out
+
+
 def parse_generic_links(html, source_name, country=""):
     soup = BeautifulSoup(html, "html.parser")
     out = []
@@ -227,6 +318,24 @@ def discover():
             all_firms += found
         time.sleep(1)
 
+    print("[5] EAAR (Authorised Representatives — exact ICP) ...")
+    for u in EAAR:
+        html = fetch(u)
+        if html:
+            found = parse_eaar(html)
+            print(f"    EAAR: {len(found)} AR firms")
+            all_firms += found
+        time.sleep(1)
+
+    print("[6] NoBoCap (richest ICP repository) ...")
+    for u in NOBOCAP:
+        html = fetch(u)
+        if html:
+            found = parse_nobocap(html)
+            print(f"    NoBoCap: {len(found)} regulatory-support firms")
+            all_firms += found
+        time.sleep(1)
+
     # Optional manual seed (Swiss Medtech / Biotechgate copied by hand)
     seed = OUTPUT_DIR / "manual_seed.csv"
     if seed.exists():
@@ -260,10 +369,10 @@ def discover():
     # write raw discovery
     out = OUTPUT_DIR / "icp_discovered.csv"
     with open(out, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["company", "country", "website", "description", "source"])
+        w = csv.DictWriter(f, fieldnames=["company", "country", "website", "description", "source", "public_contact"])
         w.writeheader()
         for row in deduped:
-            w.writerow({k: row.get(k, "") for k in ["company", "country", "website", "description", "source"]})
+            w.writerow({k: row.get(k, "") for k in ["company", "country", "website", "description", "source", "public_contact"]})
 
     print(f"\nDISCOVERED {len(deduped)} unique firms across sources -> {out}")
     return deduped
