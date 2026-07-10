@@ -54,10 +54,14 @@ def get_brochure_url(crd):
         if isinstance(d,dict) and "hits" in d:
             hits=d["hits"].get("hits",[])
             src=hits[0].get("_source",{}) if hits else {}
-        # find brochure/CRS url anywhere in the record
+        # find brochure/CRS url anywhere in the record (aspx viewer OR pdf)
         blob=json.dumps(src)
-        m=re.search(r'https://[^"]*[Bb]rochure[^"]*', blob) or re.search(r'https://reports\.adviserinfo\.sec\.gov/crs/[^"]*\.pdf', blob)
-        return m.group(0) if m else None
+        for pat in [r'https://[^"\\]*[Bb]rochure[^"\\]*',
+                    r'https://reports\.adviserinfo\.sec\.gov/crs/[^"\\]*\.pdf',
+                    r'https://files\.adviserinfo\.sec\.gov/[^"\\]*']:
+            m=re.search(pat, blob)
+            if m: return m.group(0)
+        return None
     except: return None
 
 def parse_pdf(pdf_bytes):
@@ -106,11 +110,12 @@ def scrape_site(base):
 def enrich(firm):
     firm["email"]=""; firm["phone"]=""; firm["website"]=firm.get("website","")
     em,ph=[],[]
-    # A: brochure PDF
+    # A: brochure PDF (SEC serves it via .aspx viewer OR .pdf — fetch either way)
     burl=get_brochure_url(firm.get("firm_crd",""))
-    if burl and burl.lower().endswith(".pdf"):
+    if burl:
         pdf=fetch(burl,binary=True)
-        if pdf: em,ph=parse_pdf(pdf)
+        if pdf and pdf[:4]==b"%PDF":   # confirm it's really a PDF
+            em,ph=parse_pdf(pdf)
     # B: guessed domain (if still missing)
     if not em or not ph:
         for dom in guess_domains(firm.get("firm","")):
