@@ -109,34 +109,34 @@ def scrape_site(base):
 
 def enrich(firm):
     firm["email"]=""; firm["phone"]=""; firm["website"]=firm.get("website","")
+    firm["source"]=""
     em,ph=[],[]
-    # A: brochure PDF (SEC serves it via .aspx viewer OR .pdf — fetch either way)
+    # BROCHURE ONLY — official SEC Form ADV filing, high trust, no wrong-site risk
     burl=get_brochure_url(firm.get("firm_crd",""))
     if burl:
         pdf=fetch(burl,binary=True)
-        if pdf and pdf[:4]==b"%PDF":   # confirm it's really a PDF
+        if pdf and pdf[:4]==b"%PDF":
             em,ph=parse_pdf(pdf)
-    # B: guessed domain (if still missing)
-    if not em or not ph:
-        for dom in guess_domains(firm.get("firm","")):
-            html=fetch("https://"+dom)
-            if html and len(html)>500:
-                low=html.lower(); fw=firm.get("firm","").lower().split()[0] if firm.get("firm") else ""
-                if fw and (fw in low or "advisor" in low or "wealth" in low or "invest" in low):
-                    firm["website"]="https://"+dom
-                    se,sp=scrape_site("https://"+dom)
-                    em=em or se; ph=ph or sp
-                    break
-            time.sleep(0.2)
-    firm["email"]="; ".join(em); firm["phone"]="; ".join(ph)
+            if em or ph:
+                firm["source"]="SEC brochure"
+    # dedupe
+    seen_e=set(); ue=[]
+    for e in em:
+        k=e.lower().strip()
+        if k and k not in seen_e: seen_e.add(k); ue.append(e.strip())
+    seen_p=set(); up=[]
+    for p in ph:
+        k=re.sub(r"\D","",p)
+        if k and k not in seen_p: seen_p.add(k); up.append(p.strip())
+    firm["email"]="; ".join(ue[:3]); firm["phone"]="; ".join(up[:2])
     return firm
 
 def main():
     if not IN.exists():
         print(f"[!] {IN} not found — run advisors_fetch.py first."); return
     rows=list(csv.DictReader(open(IN,encoding="utf-8")))
-    # TEST MODE: set to 5 for a quick test, or len(rows) for all
-    LIMIT=5
+    # Full run: all firms in the state
+    LIMIT=len(rows)
     rows=rows[:LIMIT]
     print(f"Enriching {len(rows)} firms (brochure PDF + domain guess, free)...\n")
     out=[]
@@ -147,7 +147,7 @@ def main():
         print(f"[{i}/{len(rows)}] {r['firm'][:34]:34} {('OK '+ '+'.join(tag)) if tag else '- none'}"
               + (f"  {r.get('email','')} {r.get('phone','')}" if tag else ""))
         out.append(r); time.sleep(0.3)
-    fields=["firm","firm_crd","city","state","website","email","phone"]
+    fields=["firm","firm_crd","city","state","website","email","phone","source"]
     with open(OUT,"w",newline="",encoding="utf-8") as fh:
         w=csv.DictWriter(fh,fieldnames=fields,extrasaction="ignore"); w.writeheader(); w.writerows(out)
     n=len(out) or 1
