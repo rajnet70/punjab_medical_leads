@@ -56,11 +56,17 @@ def fetch_firms_by_state(state, max_pages=50):
         hits = (data.get("hits", {}) or {}).get("hits", [])
         if not hits:
             break
+        # DIAGNOSTIC: on the very first hit, print the real field names once
+        if page == 0 and hits:
+            first_src = hits[0].get("_source", hits[0])
+            print(f"  [FIELDS] {list(first_src.keys())}")
+            print(f"  [SAMPLE] {json.dumps(first_src)[:400]}")
         for h in hits:
             src = h.get("_source", h)
             firms.append({
                 "firm": src.get("firm_name") or src.get("org_name") or "",
-                "firm_crd": src.get("firm_crd") or src.get("crd") or "",
+                "firm_crd": (src.get("firm_crd") or src.get("crd") or src.get("firm_source_id")
+                             or src.get("firm_ia_full_source_id") or src.get("source_id") or ""),
                 "city": src.get("firm_city") or src.get("city") or "",
                 "state": src.get("firm_state") or state,
                 "website": "",  # filled during enrichment
