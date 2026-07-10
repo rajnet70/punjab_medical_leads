@@ -43,12 +43,27 @@ for f in rows:
             src = hits[0].get("_source",{}) if hits else {}
         if isinstance(src,dict):
             print(f"  top-level keys: {list(src.keys())[:30]}")
-        # 3. Find ANY url in the whole blob
-        blob = json.dumps(src)
-        urls = re.findall(r'https?://[^\s"\\]+', blob)
-        print(f"  URLs in record ({len(urls)}):")
-        for u in urls[:8]:
-            print(f"     {u}")
+
+        # iacontent holds the real data as a nested JSON STRING - unpack it
+        if isinstance(src,dict) and "iacontent" in src:
+            ia = src["iacontent"]
+            if isinstance(ia,str):
+                try:
+                    ia = json.loads(ia)
+                    print(f"  iacontent unpacked -> keys: {list(ia.keys())[:40]}")
+                except Exception:
+                    print(f"  iacontent is a string (first 500): {ia[:500]}")
+            if isinstance(ia,dict):
+                # dump interesting contact-ish fields
+                blob2 = json.dumps(ia)
+                for kw in ["web","url","site","brochure","phone","email","addr"]:
+                    hits_kw = [m for m in re.findall(rf'"[^"]*{kw}[^"]*"\s*:\s*"[^"]{{0,80}}"', blob2, re.I)]
+                    for h in hits_kw[:3]:
+                        print(f"      {h}")
+                urls = re.findall(r'https?://[^\s"\\]+', blob2)
+                print(f"  URLs inside iacontent ({len(urls)}):")
+                for u in urls[:8]:
+                    print(f"     {u}")
     except Exception as e:
         print(f"  JSON parse error: {e}")
         print(f"  raw body (first 300): {body[:300]}")
