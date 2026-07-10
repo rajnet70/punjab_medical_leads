@@ -54,16 +54,11 @@ for f in rows:
                 except Exception:
                     print(f"  iacontent is a string (first 500): {ia[:500]}")
             if isinstance(ia,dict):
-                # dump interesting contact-ish fields
-                blob2 = json.dumps(ia)
-                for kw in ["web","url","site","brochure","phone","email","addr"]:
-                    hits_kw = [m for m in re.findall(rf'"[^"]*{kw}[^"]*"\s*:\s*"[^"]{{0,80}}"', blob2, re.I)]
-                    for h in hits_kw[:3]:
-                        print(f"      {h}")
-                urls = re.findall(r'https?://[^\s"\\]+', blob2)
-                print(f"  URLs inside iacontent ({len(urls)}):")
-                for u in urls[:8]:
-                    print(f"     {u}")
+                # dump the three sections most likely to hold contact + brochure
+                for section in ["basicInformation", "iaFirmAddressDetails", "brochures"]:
+                    if section in ia:
+                        print(f"  --- {section} ---")
+                        print(f"      {json.dumps(ia[section])[:600]}")
     except Exception as e:
         print(f"  JSON parse error: {e}")
         print(f"  raw body (first 300): {body[:300]}")
