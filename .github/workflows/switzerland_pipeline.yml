@@ -26,8 +26,10 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install requests beautifulsoup4
-      - name: Test all four sources (diagnostic only, no CSV output)
+      - name: Round 1 - basic source check
         run: python test_sources_ch.py
+      - name: Round 2 - find where company names actually sit on the page
+        run: python test_sources_ch2.py
 
   discover-and-enrich:
     needs: test-sources
