@@ -1,0 +1,55 @@
+name: Switzerland MedTech Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: 'test = diagnostic only, full = test + discover + enrich'
+        required: true
+        default: 'test'
+        type: choice
+        options:
+          - test
+          - full
+  schedule:
+    - cron: '0 6 * * 1'  # weekly, Monday 6am UTC — runs full mode
+
+jobs:
+  test-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Test all four sources (diagnostic only, no CSV output)
+        run: python test_sources_ch.py
+
+  discover-and-enrich:
+    needs: test-sources
+    if: github.event.inputs.run_mode == 'full' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Discover Switzerland companies (all sources)
+        run: python discover_ch.py
+      - name: Enrich with founder/contact detail
+        run: python enrich_ch.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add companies_ch_raw.csv companies_ch_enriched.csv
+          git diff --staged --quiet || git commit -m "Weekly Switzerland data update"
+          git push
