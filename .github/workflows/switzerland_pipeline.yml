@@ -12,7 +12,7 @@ on:
           - test
           - full
   schedule:
-    - cron: '0 6 * * 1'  # weekly, Monday 6am UTC — runs full mode
+    - cron: '0 6 * * 1'
 
 jobs:
   test-sources:
@@ -26,10 +26,14 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install requests beautifulsoup4
+      - name: Quick check - is the startup.ch login still working?
+        run: python test_startup_ch_login.py
       - name: Round 1 - basic source check
         run: python test_sources_ch.py
       - name: Round 2 - find where company names actually sit on the page
         run: python test_sources_ch2.py
+      - name: Round 3 - check newly found sources (Innosuisse, universities, etc.)
+        run: python test_sources_ch3.py
 
   discover-and-enrich:
     needs: test-sources
