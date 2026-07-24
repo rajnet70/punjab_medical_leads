@@ -30,10 +30,12 @@ jobs:
         run: python test_startup_ch_login.py
       - name: Round 1 - basic source check
         run: python test_sources_ch.py
-      - name: Round 2 - find where company names actually sit on the page
+      - name: Round 2 - Seedtable deep check
         run: python test_sources_ch2.py
-      - name: Round 3 - check newly found sources (Innosuisse, universities, etc.)
+      - name: Round 3 - check newly found sources
         run: python test_sources_ch3.py
+      - name: Round 4 - deep check on confirmed new sources
+        run: python test_sources_ch4.py
 
   discover-and-enrich:
     needs: test-sources
