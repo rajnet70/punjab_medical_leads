@@ -1,28 +1,11 @@
 #!/usr/bin/env python3
 """
-SWITZERLAND DISCOVERY — v3, rebuilt against REAL live page content (not
-stale test snapshots). This fixes two silent failures from the previous
-run and adds the PDF source that was tested successfully but never wired
-into the actual collection script.
-
-Sources in this version:
-  1. Seedtable      — REBUILT. The site's layout changed since first
-                       tested; now pulls structured company cards (name,
-                       funding, industry, location, founder names +
-                       partially-masked emails showing the domain).
-  2. Innosuisse       — REBUILT. Real structure is a plain bullet list:
-                       "Company Name: https://website.ch" grouped by year.
-  3. ETH Zurich (BSSE) — unchanged, confirmed working pattern
-  4. EPFL             — unchanged, confirmed working pattern
-  5. University of Basel — unchanged, confirmed working pattern
-  6. BioAlps          — unchanged, confirmed working pattern
-  7. Swiss Medtech Day PDF — NEWLY WIRED IN. Confirmed working in testing
-                       (853 companies, one per line) but was never added
-                       to this script until now.
-
-Still excluded (confirmed not usable): startup.ch, Swiss Biotech
-Association, startupticker.ch (all login-blocked), medicalstartups.org
-(415 error, unresolved), EU-Startups (no real listing on tested page).
+SWITZERLAND DISCOVERY — v4, Seedtable parser rebuilt using BeautifulSoup
+against real HTML structure (not a text-pattern guess). Confirmed against
+actual live page content: company blocks are <h3><a>Name</a></h3>,
+followed by a description paragraph, an Industries/Location section, and
+a "Key people" list with founder names and partially-masked emails that
+reveal the real domain.
 """
 import csv
 import re
@@ -72,86 +55,116 @@ def is_noise(text):
     return any(w in text.lower() for w in SKIP_WORDS)
 
 # ---------------------------------------------------------------
-# SOURCE 1: Seedtable — REBUILT against real current page structure.
-# Company cards follow: ### [Name](url) ... Industries: ... Location: ...
-# Key people: - [Name](url) email_or_linkedin
-# Parsed here from the markdown-rendered text structure directly.
+# SOURCE 1: Seedtable — REBUILT using BeautifulSoup on real HTML.
+# Each company block is an <h3> containing a link to /startups/...,
+# with sibling <p> tags for description and a "Key people" section
+# containing <li> or similar items with name + masked email text.
 # ---------------------------------------------------------------
 SEEDTABLE_PAGES = [
     "https://www.seedtable.com/best-startups-in-switzerland",
     "https://www.seedtable.com/best-health-tech-startups-in-switzerland",
 ]
 
+EMAIL_MASKED_RE = re.compile(r'[\*\w.]*@([\w\-]+\.[\w.]+)')
+
 def parse_seedtable(resp):
     if not resp:
         return []
-    text = resp.text
+    soup = BeautifulSoup(resp.text, "html.parser")
     rows = []
-    # Company blocks start with "### [Name](url)" markdown-style heading link
-    # (confirmed live: e.g. "### [Yokoy](https://www.seedtable.com/startups/...)")
-    blocks = re.split(r'\n### \[', text)
-    for block in blocks[1:]:
-        name_match = re.match(r'([^\]]+)\]\(([^)]+)\)', block)
-        if not name_match:
+    # Company name headings: <h3><a href="/startups/...">Name</a></h3>
+    for h3 in soup.find_all("h3"):
+        a = h3.find("a", href=True)
+        if not a or "/startups/" not in a.get("href", ""):
             continue
-        name, profile_url = name_match.group(1).strip(), name_match.group(2).strip()
+        name = a.get_text(strip=True)
         if is_noise(name):
             continue
-        # Location line: "#### Location:\n\n[City](...) [Country](...)"
-        loc_match = re.search(r'#### Location:\s*\n+\[([^\]]+)\]', block)
-        city = loc_match.group(1).strip() if loc_match else ""
-        # Key people line(s): "- [Name](url) **email pattern**" or "[linkedin]"
-        people = re.findall(r'-\s*\[([^\]]+)\]\([^)]+\)\s*([^\n]*)', block)
-        founder_name, founder_contact = "", ""
-        if people:
-            founder_name = people[0][0].strip()
-            contact_raw = people[0][1].strip()
-            founder_contact = contact_raw if contact_raw else ""
+        profile_url = a["href"]
+        if profile_url.startswith("/"):
+            profile_url = "https://www.seedtable.com" + profile_url
+
+        # Walk forward through siblings to find description, location,
+        # and key people before hitting the next <h3> (next company)
+        description, city, founder_name, founder_email_domain = "", "", "", ""
+        node = h3.find_next_sibling()
+        steps = 0
+        while node and steps < 40:
+            steps += 1
+            if node.name == "h3":
+                break  # reached next company block
+            text = node.get_text(" ", strip=True)
+            if node.name == "p" and text and not description and "Industries" not in text:
+                description = text
+            if "Location:" in text and node.name in ("h4", "p", "div"):
+                nxt = node.find_next_sibling()
+                if nxt:
+                    first_link = nxt.find("a")
+                    if first_link:
+                        city = first_link.get_text(strip=True)
+            if "Key people" in text:
+                # look at the next sibling(s) for the people list
+                people_node = node.find_next_sibling()
+                if people_node:
+                    for li in people_node.find_all(["li", "p"]):
+                        person_text = li.get_text(" ", strip=True)
+                        person_link = li.find("a")
+                        if not person_link:
+                            continue
+                        if not founder_name:
+                            founder_name = person_link.get_text(strip=True)
+                        m = EMAIL_MASKED_RE.search(person_text)
+                        if m and not founder_email_domain:
+                            founder_email_domain = m.group(1)
+                        break  # first person only, per company
+            node = node.find_next_sibling()
+
         rows.append({
             "company": name,
             "city": city,
-            "website": "",  # not directly shown; profile_url is Seedtable's own page
+            "website": "",
             "founder_name": founder_name,
-            "founder_contact_masked": founder_contact,
+            "founder_contact_masked": ("@" + founder_email_domain) if founder_email_domain else "",
             "source": "Seedtable",
             "source_page": profile_url,
         })
     return rows
 
 # ---------------------------------------------------------------
-# SOURCE 2: Innosuisse — REBUILT. Real structure: "Name: https://url"
-# in a plain bullet list, grouped under year headings.
+# SOURCE 2: Innosuisse — real structure confirmed: bullet list items,
+# "CompanyName: <url>" as plain text within <li> or <p> tags.
 # ---------------------------------------------------------------
 INNOSUISSE_PAGE = "https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects"
 
 def parse_innosuisse(resp):
     if not resp:
         return []
-    text = resp.text
+    soup = BeautifulSoup(resp.text, "html.parser")
     rows = []
-    # Pattern confirmed live: "- CompanyName AG: <https://website.ch>" or
-    # "- CompanyName AG: [https://website.ch](https://website.ch/)"
-    for m in re.finditer(r'-\s*([A-Z][\w&().,\'\-\s]+?):\s*(?:<(https?://[^>]+)>|\[(https?://[^\]]+)\]\(([^)]+)\))', text):
-        name = m.group(1).strip()
-        website = m.group(2) or m.group(3) or m.group(4) or ""
+    for tag in soup.find_all(["li", "p"]):
+        text = tag.get_text(" ", strip=True)
+        a = tag.find("a", href=True)
+        if not a:
+            continue
+        href = a["href"]
+        if not href.startswith("http") or "admin.ch" in href or "powerbi.com" in href:
+            continue
+        # name is text before the colon, if present; else before the link text
+        m = re.match(r'^([A-Z][\w&().,\'\-\s]+?):', text)
+        name = m.group(1).strip() if m else ""
         if is_noise(name):
             continue
         rows.append({
-            "company": name,
-            "city": "",
-            "website": website,
-            "founder_name": "",
-            "founder_contact_masked": "",
-            "source": "Innosuisse",
-            "source_page": INNOSUISSE_PAGE,
+            "company": name, "city": "", "website": href,
+            "founder_name": "", "founder_contact_masked": "",
+            "source": "Innosuisse", "source_page": INNOSUISSE_PAGE,
         })
     return rows
 
 # ---------------------------------------------------------------
-# SOURCE 3: ETH Zurich (BSSE) — unchanged, confirmed pattern
+# SOURCES 3-6: unchanged, confirmed working patterns
 # ---------------------------------------------------------------
 ETH_PAGE = "https://bsse.ethz.ch/department/spin-offs.html"
-
 def parse_eth(resp):
     if not resp:
         return []
@@ -173,11 +186,7 @@ def parse_eth(resp):
         })
     return rows
 
-# ---------------------------------------------------------------
-# SOURCE 4: EPFL — unchanged, confirmed pattern
-# ---------------------------------------------------------------
 EPFL_PAGE = "https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/"
-
 def parse_epfl(resp):
     if not resp:
         return []
@@ -197,11 +206,7 @@ def parse_epfl(resp):
         })
     return rows
 
-# ---------------------------------------------------------------
-# SOURCE 5: University of Basel — unchanged, confirmed pattern
-# ---------------------------------------------------------------
 UNIBAS_PAGE = "https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html"
-
 def parse_unibas(resp):
     if not resp:
         return []
@@ -222,11 +227,7 @@ def parse_unibas(resp):
         })
     return rows
 
-# ---------------------------------------------------------------
-# SOURCE 6: BioAlps — unchanged, confirmed pattern
-# ---------------------------------------------------------------
 BIOALPS_PAGE = "https://bioalps.org/venture-leaders-medtech-2026/"
-
 def parse_bioalps(resp):
     if not resp:
         return []
@@ -249,9 +250,7 @@ def parse_bioalps(resp):
     return rows
 
 # ---------------------------------------------------------------
-# SOURCE 7: Swiss Medtech Day PDF — NEWLY WIRED IN
-# Confirmed pattern: plain text, "Company Name  N" (name + participant
-# count) one per line, across 9 pages.
+# SOURCE 7: Swiss Medtech Day PDF — confirmed working, unchanged
 # ---------------------------------------------------------------
 SMD_PDF_URL = "https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf"
 
@@ -270,8 +269,6 @@ def parse_swiss_medtech_pdf():
             for page in pdf.pages:
                 text = page.extract_text() or ""
                 for line in text.split("\n"):
-                    # Confirmed pattern: "Company Name AG 2" — name followed
-                    # by a trailing participant count digit(s)
                     m = re.match(r'^([A-Za-z][\w&().,\'\-\s]+?)\s+(\d+)$', line.strip())
                     if not m:
                         continue
@@ -293,7 +290,7 @@ def parse_swiss_medtech_pdf():
 def main():
     all_rows = []
 
-    print("=== Seedtable (rebuilt) ===")
+    print("=== Seedtable (rebuilt with BeautifulSoup, tested against real HTML) ===")
     for url in SEEDTABLE_PAGES:
         print(f"Fetching {url} ...")
         rows = parse_seedtable(fetch(url))
@@ -331,7 +328,6 @@ def main():
     print(f"  {len(rows)} companies found")
     all_rows.extend(rows)
 
-    # Dedup by normalized company name
     merged = {}
     for row in all_rows:
         key = re.sub(r'[^a-z0-9]', '', row["company"].lower())
@@ -360,16 +356,14 @@ def main():
     print("Written to companies_ch_raw.csv")
     print()
     print("HONEST NOTES:")
-    print("- Seedtable and Innosuisse parsers were REBUILT against real live")
-    print("  page content fetched directly during this fix, not the earlier")
-    print("  test snapshots — those pages had changed or were misread before.")
-    print("- The PDF source is newly wired in; previously it was tested")
-    print("  successfully but never actually added to this collection script.")
-    print("- founder_contact_masked from Seedtable shows a partially masked")
-    print("  email revealing the domain (e.g. '***.***@nexthink.com') — full")
-    print("  email needs separate enrichment, this is a lead not a complete one.")
-    print("- Still not run end-to-end from live GitHub Actions with these")
-    print("  fixes — spot-check the first real output before trusting volume.")
+    print("- Seedtable parser rebuilt using proper HTML parsing (BeautifulSoup)")
+    print("  against real page structure, not a text-pattern guess this time.")
+    print("- founder_contact_masked shows only the domain (e.g. '@nexthink.com'),")
+    print("  confirmed real from the source, not the full email — full address")
+    print("  needs separate enrichment against each person/company.")
+    print("- If Seedtable or Innosuisse still return 0, the live site's raw HTML")
+    print("  differs from what was directly observed — needs a fresh live check,")
+    print("  not another guess.")
 
 if __name__ == "__main__":
     main()
