@@ -58,8 +58,6 @@ jobs:
         run: pip install requests beautifulsoup4 pdfplumber
       - name: Discover Switzerland companies (all sources)
         run: python discover_ch.py
-      - name: Look up no-website companies in Zefix (official registry)
-        run: python lookup_zefix.py
       - name: Enrich with founder/contact detail
         run: python enrich_ch.py
       - name: Commit results
