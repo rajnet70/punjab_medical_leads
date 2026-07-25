@@ -1,0 +1,69 @@
+name: Switzerland MedTech Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_mode:
+        description: 'test = diagnostic only, full = test + discover + enrich'
+        required: true
+        default: 'test'
+        type: choice
+        options:
+          - test
+          - full
+  schedule:
+    - cron: '0 6 * * 1'
+
+jobs:
+  test-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pdfplumber
+      - name: Quick check - is the startup.ch login still working?
+        run: python test_startup_ch_login.py
+      - name: Round 1 - basic source check
+        run: python test_sources_ch.py
+      - name: Round 2 - Seedtable deep check
+        run: python test_sources_ch2.py
+      - name: Round 3 - check newly found sources
+        run: python test_sources_ch3.py
+      - name: Round 4 - deep check on confirmed new sources
+        run: python test_sources_ch4.py
+      - name: Round 5 - fix the 4 messy sources
+        run: python test_sources_ch5.py
+      - name: PDF test - Swiss Medtech Day company list
+        run: python test_pdf_ch.py
+
+  discover-and-enrich:
+    needs: test-sources
+    if: github.event.inputs.run_mode == 'full' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 pdfplumber
+      - name: Discover Switzerland companies (all sources)
+        run: python discover_ch.py
+      - name: Look up no-website companies in Zefix (official registry)
+        run: python lookup_zefix.py
+      - name: Enrich with founder/contact detail
+        run: python enrich_ch.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add companies_ch_raw.csv companies_ch_zefix.csv companies_ch_enriched.csv
+          git diff --staged --quiet || git commit -m "Weekly Switzerland data update"
+          git push
