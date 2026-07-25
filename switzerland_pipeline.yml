@@ -45,6 +45,8 @@ jobs:
     needs: test-sources
     if: github.event.inputs.run_mode == 'full' || github.event_name == 'schedule'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -56,14 +58,12 @@ jobs:
         run: pip install requests beautifulsoup4 pdfplumber
       - name: Discover Switzerland companies (all sources)
         run: python discover_ch.py
-      - name: Look up no-website companies in Zefix (official registry)
-        run: python lookup_zefix.py
       - name: Enrich with founder/contact detail
         run: python enrich_ch.py
       - name: Commit results
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add companies_ch_raw.csv companies_ch_zefix.csv companies_ch_enriched.csv
+          git add companies_ch_raw.csv companies_ch_enriched.csv
           git diff --staged --quiet || git commit -m "Weekly Switzerland data update"
           git push
