@@ -68,6 +68,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add companies_ch_raw.csv companies_ch_enriched.csv companies_ch_222_full.csv companies_ch_smd_filtered.csv companies_ch_smd_excluded.csv
+          git add companies_ch_raw.csv companies_ch_enriched.csv companies_ch_222_full.csv companies_ch_smd_filtered.csv companies_ch_smd_excluded.csv crawl_diagnostics.csv
           git diff --staged --quiet || git commit -m "Weekly Switzerland data update"
           git push
