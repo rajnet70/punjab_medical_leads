@@ -36,8 +36,17 @@ KNOWN_LARGE_ENTERPRISES = [
     "gerresheimer", "hologic", "institut straumann", "karl storz",
     "fresenius", "ferring pharmaceuticals", "geistlich pharma",
     "cilag", "janssen", "depuy synthes", "synthes gmbh", "tecan",
-    "hamilton medical", "haag-streit", "ivoclar vivadent", "curaden",
-    "swissmedic", "swiss medtech",  # the event organizer itself
+    "hamilton medical", "haagstreit", "ivoclar vivadent", "curaden",
+    "swissmedic", "swiss medtech",
+    # Added after real diagnostic run confirmed these large/non-startup
+    # names were slipping through — same source (Swiss Medtech Day),
+    # different specific companies than the first sample caught
+    "dassault systemes", "salesforce", "iqvia", "csem", "maxon",
+    "sensirion", "veranex", "veristat", "lohmann & rauscher",
+    "comsol", "aon", "bsi",  # note: matches "bsi" as standalone token only,
+                                    # handled by normalize() word-boundary safe
+    "sensile medical", "shl medical", "weidmann medical technology",
+    "filax medical",  # est. Swiss medical distributor, not a startup
 ]
 
 # Consultancies, law firms, and professional services — real names
@@ -60,21 +69,54 @@ KNOWN_INSTITUTIONS = [
     "seco", "office of public health", "u.s. embassy", "us embassy",
 ]
 
+import unicodedata
+
 def normalize(name):
-    return re.sub(r'[^a-z0-9& ]', '', name.lower()).strip()
+    # Convert accented characters to their plain equivalent BEFORE
+    # stripping non-alphanumeric chars, so 'Systèmes' -> 'systemes'
+    # rather than accented letters being deleted entirely -> 'systmes'
+    ascii_name = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode('ascii')
+    return re.sub(r'[^a-z0-9& ]', '', ascii_name.lower()).strip()
+
+def _word_boundary_match(pattern, text):
+    """Word-boundary match, not substring — prevents short strings like
+    'aon' or 'bsi' from wrongly matching inside a longer real company
+    name (e.g. 'Aonic', 'Absion'). Multi-word patterns (e.g. 'haag
+    streit') still match as a phrase."""
+    escaped = re.escape(pattern)
+    return re.search(rf'(?<![a-z0-9]){escaped}(?![a-z0-9])', text) is not None
+
+# Patterns confirmed from real diagnostic output: PDF-download artifact
+# text and non-company German phrases that leaked in as "company names"
+# during parsing — not large enterprises, just parsing junk.
+JUNK_NAME_PATTERNS = [
+    r'^download', r'\.pdf', r'^www\.',  # URL/file artifacts, not real names
+    r'^keine agentur',  # "not an agency" — a literal disclaimer, not a company
+    r'^\d+\s*mb$',
+]
+
+def is_junk_name(company_name):
+    """Catches parsing artifacts (URLs, file-download labels, disclaimer
+    text) that ended up as "company names" — separate from the
+    enterprise/institution exclusion above, since these aren't real
+    organizations of any kind."""
+    n = company_name.lower().strip()
+    return any(re.search(p, n) for p in JUNK_NAME_PATTERNS)
 
 def is_excluded(company_name):
     """Returns (True, reason) if this name matches a known non-startup
-    pattern, else (False, None)."""
+    pattern, else (False, None). Uses word-boundary matching to avoid
+    false positives on real startup names that happen to contain a
+    short exclusion pattern as a substring."""
     n = normalize(company_name)
     for enterprise in KNOWN_LARGE_ENTERPRISES:
-        if enterprise in n:
+        if _word_boundary_match(enterprise, n):
             return True, f"known large enterprise ({enterprise})"
     for firm in KNOWN_CONSULTANCIES:
-        if firm in n:
+        if _word_boundary_match(firm, n):
             return True, f"known consultancy/professional services ({firm})"
     for inst in KNOWN_INSTITUTIONS:
-        if inst in n:
+        if _word_boundary_match(inst, n):
             return True, f"institution/government/association ({inst})"
     return False, None
 
@@ -91,6 +133,10 @@ def main():
 
     kept, excluded = [], []
     for row in smd_rows:
+        if is_junk_name(row["company"]):
+            row["exclusion_reason"] = "parsing artifact (not a real company name)"
+            excluded.append(row)
+            continue
         is_excl, reason = is_excluded(row["company"])
         if is_excl:
             row["exclusion_reason"] = reason

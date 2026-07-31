@@ -603,9 +603,9 @@ def main():
         crawl_report_rows.append({
             "company": row["company"], "pages_discovered": diag["pages_discovered"],
             "pages_crawled": diag["pages_crawled"], "max_depth_reached": diag["max_depth_reached"],
-            "products_found": "Y" if products != NA else "N",
-            "services_found": "Y" if services != NA else "N",
-            "technologies_found": "Y" if technologies != NA else "N",
+            "products_found": "Y" if products else "N",
+            "services_found": "Y" if services else "N",
+            "technologies_found": "Y" if technologies else "N",
             "leadership_found": "Y" if founder_strs else "N",
             "contact_found": "Y" if (email != NA or phone != NA) else "N",
             "hiring_found": "Y" if hiring["hiring_status"] else "N",
