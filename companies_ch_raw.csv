@@ -1,527 +1,169 @@
-company,city,website,founder_name,founder_contact_masked,source,source_page,also_seen_in,confidence
-Apheros AG,,https://www.apheros.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Borobotics GmbH,,https://www.borobotics.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Caterra AG,,https://caterra.org,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Cellvie AG,,https://cellvie.bio,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Crypto Pharma GmbH,,https://crypto-pharma.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-CSky SA,,https://fr.csky.ai,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-DePoly SA,,https://fr.depoly.co/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Gapfruit AG,,https://www.gapfruit.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Haya Therapeutics SA,,https://www.hayatx.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-HeroSupport SA,,https://www.herosupport.care,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-INERGIO Technologies SA,,https://inergio.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Isochronic AG,,https://isochronic.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Kairos Medical AG,,https://kairosmedical.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,Swiss Medtech Day 2026,n/a (not Swiss Medtech Day)
-Lightium AG,,https://lightium.co/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Medirapp AG,,https://medirapp.ai,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Mimic robotics AG,,https://www.mimicrobotics.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-MindMetrix AG,,https://www.mindmetrix.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Nagi Bioscience SA,,https://nagibio.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Neur.on AI Solutions SA,,https://neur-on.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Noriware AG,,https://www.noriware.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-NovaGo Therapeutics AG,,https://www.novagotherapeutics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-NovoMOF AG,,https://novomof.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Oxara AG,,https://oxara.earth,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Oxyle AG,,https://oxyle.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Planeto SA,,https://www.planeto-energy.ch/fr/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-ReoR20 AG,,https://www.reor20.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Swiss-Mile Robotics AG,,https://www.swiss-mile.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Synendos Therapeutics AG,,https://www.synendos.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Tune Insight SA,,https://tuneinsight.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Ucentrics AG,,https://www.ucentrics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Unbound Potential GmbH,,https://www.unbound-potential.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Versics AG,,https://versics.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Vyzn AG,,https://www.vyzn.tech,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Yeastup AG,,https://www.yeastup.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Adastra Sustainability SA,,https://www.adastra.eco/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Aegis Rider AG,,https://aegisrider.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-AICA SA,,https://www.aica.tech/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-AI Medical AG,,https://www.ai-medical.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Akina AG,,https://www.akina.health/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Alter Ego Technologies AG,,https://www.alter-ego.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Annaida Technologies SA,,https://annaida.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Artiria Medical SA,,https://artiria-medical.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Ascento AG,,https://www.ascento.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-ASTRA Therapeutics GmbH,,https://www.astratherapeutics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Avelo AG,,https://www.avelolife.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Cellestia Biotech AG,,https://www.cellestia.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-CondenZero GmbH,,https://condenzero.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Decentralized Intelligence AG,,https://d23e.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-DEEPLIGHT SA,,https://deeplight.pro/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Egonym AG,,https://egonym.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-FenX AG,,https://www.fenx.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Floating Robotics AG,,https://www.floatingrobotics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Glucoloop AG,,https://glucoloop.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Irmos technologies AG,,https://www.irmos-tech.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Jua.ai AG,,https://www.jua.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-LifeMatrix Technologies AG,,https://www.lifematrixtechnologies.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Linia AG,,https://ttps//www.linia.ch/index.html,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-MeduSoil SA,,https://www.medusoil.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Miraex SA,,https://www.miraex.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Navignostics AG,,https://www.navignostics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Neutrality Sàrl,,https://neutrality.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Rapidata AG,,https://www.rapidata.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Sanetics AG,,https://sanetics.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Seprify AG (Impossible Materials AG),,https://seprify.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-SmartHelio Sàrl,,https://smarthelio.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Terapet SA,,https://terapet.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-TOLREMO therapeutics AG,,https://www.tolremo.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Topadur Pharma AG,,https://www.topadur.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-TOSA swisstech SA,,https://www.tosa-swisstech.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-UniSieve AG,,https://www.unisieve.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Vandria SA,,https://www.vandria.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-Zaamigo AG,,https://zaamigo.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,,n/a (not Swiss Medtech Day)
-DropGen,,https://www.dropgen.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Fy Cappa Biologics,,https://www.fcbiologics.com/,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Myria Biosciences,,https://www.myria.bio,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Engimmune Therapeutics,,https://www.engimmune.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Pattern BioSciences,,https://www.patternbio.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Visium,,https://visium.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-www.unitelabs.ch,,http://www.unitelabs.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-MaxWell Biosystems AG,,https://www.mxwbio.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Shift Cryptosecurity,,https://bitbox.swiss,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-enGene Statistics,,https://www.engene.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Memo Therapeutics,,https://memo-therapeutics.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-FGen,,https://www.fgen.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-BioVersys AG,,https://www.bioversys.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-InSphero AG,,https://insphero.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Zurich Instruments,,https://www.zhinst.com/ch/en,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-"DownloadDownload (PDF, 2.7 MB)",,https://ethz.ch/content/dam/ethz/special-interest/bsse/department/Misc_PDFs/ETH_Biosystems_Image_Brochure_586x190_20250929_newEdition_Pages.pdf,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,,n/a (not Swiss Medtech Day)
-Circelec,,https://circelec.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-InSituMetrix,,https://www.insitumetrix.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Hikane,,https://www.hikane.com/en/home,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Protonica,,https://www.protonica.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Raven Robotics,,http://www.ravenrobotics.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Rhonexum,,https://www.rhonexum.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Syre.ai,,https://www.syre.ai/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Timely,,https://timely-learning.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-MoleSense,,https://www.molesense.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-MyJoint,,https://www.linkedin.com/company/optizonesport/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,,n/a (not Swiss Medtech Day)
-Polypheny GmbH,,https://polypheny.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Therayou AG,,https://www.therayou.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Povanhu GmbH,,https://www.povanhu.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Inodexa GmbH,,https://www.inodexa.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Basilea Media GmbH,,https://basileamedia.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-POC App AG,,https://www.poc-app.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Dentexion,,https://dentexion.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Moonlight AI,,https://www.moonlight-ai.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Narrowin,,https://www.narrowin.ch/de/index.html,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Kuori,,https://kuori.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-SEAL Therapeutics,,https://www.biozentrum.unibas.ch/research/technology-ventures/overview-3,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Mynatix AG,,https://mynatix.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Zysthera,,https://www.zysthera.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Calingo Insurances,,https://www.calingo.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Bottneuro,,https://www.bottneuro.ch/en,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Personalized Medical Products,,https://swiss-pmp.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Aukera therapeutics,,https://www.aukera.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Galvita,,https://www.galvita.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Codonis,,https://codonis.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Voltiris,,https://www.voltiris.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Lean Financial Solutions,,https://leafs.ch/en/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Keine Agentur,,https://keineagentur.info/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Artifex Medical,,https://artifex.health/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-CryoWrite,,https://cryowrite.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Cimeio Therapeutics,,https://www.cimeio.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Consense Philanthropy Consulting,,https://www.aboutconsense.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Rekonas,,https://www.rekonas.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Prosalute,,https://www.prosalute.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Dedomena,,https://www.dedomena.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Saluta Coach,,https://www.salutacoach.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Bottmedical,,https://www.bottmedical.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Acthera,,https://acthera-therapeutics.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Deep Breath Intelligence,,https://dbi.ch/home,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Nuonex,,https://nuonex.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Ad Mirabiles,,https://www.admirabiles.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-KetoSwiss,,https://www.keto.swiss/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-QNAMI,,https://qnami.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Shapemeans,,https://shapemeans.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Epibreed,,https://epibreed.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-T3 Pharmaceuticals,,https://www.t3pharma.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-ECyTech,,https://swissbluetecbridge.ch/entrepreneurs/ecytech/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Artidis,,https://artidis.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Polyneuron,,https://polyneuron.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-HEJUBA,,https://hejuba.ch/de/home,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-GeneGuide,,https://www.geneguide.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Mimedis,,https://www.medartis.com/fileadmin/user_upload/Investor_Relations/Media_Releases_EN/2017/170705_MM_Medartis_Mimedis_e.pdf,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-CureAB,,https://www.cureab.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Biotechnostics,,https://www.investiere.ch/biotechnostics,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Mininavident,,https://www.mininavident.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Advanced Osteotomy Tools,,https://aot.swiss/company/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-HighDim,,https://highdim.swiss/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-MarktIX,,https://www.marktix.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-NanoScan,,https://www.nanoscan.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Santhera Pharmaceuticals,,https://www.santhera.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Alpha-O Peptides,,https://www.aopeptides.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-4-Antibody,,https://agenusbio.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Nanonis,,https://www.specs-group.com/nanonis/products/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Canoo Engineering,,https://imtf.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Diagene,,https://www.diagene.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Nanosurf,,https://www.nanosurf.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-Vitaplant,,https://vitaplant.ch/de/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,,n/a (not Swiss Medtech Day)
-dexterousendoscopes.com,,https://www.dexterousendoscopes.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-molesense.ch,,https://www.molesense.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-optizone.ch,,https://www.optizone.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-beyond-diagnostics.com,,https://www.beyond-diagnostics.com,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-neurodaignostics.com,,https://neurodaignostics.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-rhovica.com,,https://rhovica.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-skaaltec.com,,https://skaaltec.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-softletics.ch,,https://softletics.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-veltist.com,,https://veltist.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,,n/a (not Swiss Medtech Day)
-Abionic SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-AdvanThink,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Aegis Healthcare Sárl,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Agathon AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-AGILITA AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Albedis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Albo Healthcare GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Aligned AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Alloga AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-alpenluft AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-AMHILL AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Anel AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Apersys AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Aproda AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ARCOZ AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ARTIDIS AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Artonis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Ascensia Diabetes Care Switzerland,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ASKER Schweiz,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ASP Global Manufacturing GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Asyril SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-August Manser AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-avasis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-avasis solutions GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Avisura AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-AWA Switzerland SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Axxos AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-B. Braun Medical AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BAYOOMED GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BAYOONET Service GmbH & Co. KG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BBC CELLPACK TECHNOLOGY AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-be-advanced AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Bern Economic Development Agency,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Beyond Diagnostics AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Biopôle SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BIOPRO Baden-Württemberg GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BoSonic AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Brütsch Technology AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Bureau Veritas Switzerland AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Bürki inno med AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-B-works GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-BW-TEC AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CADFEM AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CAMLOG Biotechnologies GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Canton du Jura,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Caragh Precision,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CathNova,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-cdots GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CECMED Regulatory Authority for Medicines and Medical Devices,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Cendres et Metaux,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Ceres Hive SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Charsadda pharmacy,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CINDER AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Circum Life Sciences AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CISTEC AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Cloos electronic,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CMSA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CODAN Medical AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Compremium AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-confinis ag,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Congenius AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CoolMedTravel,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Coopers Group AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Corflow Therapeutics AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Corscience GmbH & Co. KG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Cosanum AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-COSMO CONSULT AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-COSMO CONSULT SE,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Creaholic,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Creaholic SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CrossC Healthcare Consulting GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CSA Engineering AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CuraQ GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-CVCI,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dätwyler Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-De Bord International,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Decomplix AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-DECTRIS,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dexterous Endoscopes Sàrl,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-DMT Produktentwicklung GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-dot consulting AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-DPerspective (Emina Atlagic),,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-DQS Medizinprodukte GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dräger Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-duagon AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dyconex,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dynamic Focus GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Dynovo AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ebovis,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-EDA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Edge Compliance,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-eevolve AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Effectum Medical AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ELCA Informatik AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Electro Medical Systems (EMS),,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Emaform AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Enterprise Ireland,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-epmodex AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Ergon Informatik AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Erni Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ESC 3 FRONTIÈRES,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ESCATEC,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Estienne Medical GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-EUSwissmed GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-evismo AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ewimed Switzerland AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Faiveleytech Ticino SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-FAU Erlangen,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Faulhaber Minimotor SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Faulhaber SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Feinwerkoptik Zünd AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Fieris GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Flare International,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-FORÉCREU Deutschland GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-formscope GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Frike Pharma AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-FUCHS SWISS LUBRICANTS AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Galvanik Hofmann AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Gebrüder Renggli AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GENUI AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GenXBioscience AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GlobalLogic Poland Sp,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GMP4U GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-graspit GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GratXray AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Greater Zurich Area,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Gribi AG Belp,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Grossenbacher Systeme AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GS Swiss PCB AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-GS1 Switzerland,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-H&T Presspart,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-H.I.Executive Consulting AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Handelskammer Deutschland-Schweiz,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HARTER GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Healthcare Holding Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-healthcare projects consulting & management Stein,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HEALTHGROWER SCR SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Healthtechpark Zurich - Schlieren,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HEC Lausanne,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HEIA Fribourg,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helbling Technik AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helbling Technik Bern AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helbling Technik Wil AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helix Life Sciences SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helmholtz-Zentrum Hereon,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Helvetikett AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Hemex AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-hemotune AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Hightech Zentrum Aargau AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HKT Design GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-HLTHY Group AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Human Engineering Lab - HEPIA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-icotec,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ICS Medical Devices,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ICU tech GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-iCure,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Iftest AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-IMT Information Management Technology AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Inacta Group AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Independent Professional,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-inkcleaner,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-inmedis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Integra Sitek AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-inteQRA GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-International Center for Multimorbidity and Complexity in Medicine,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Invest Neuchâtel,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ipp Dr. Klügl,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ISO,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ISOFT (AdvanThink),,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ISP HEALTHCARE GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ITK Engineering GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Josef Binkert AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-"Kanton Aargau, Standortförderung",,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-kerAccurate,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-KIPA AB,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-konplan,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-konplan Group AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-konplan Schweiz,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Konplan Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Kontaktstelle Wirtschaft Kanton Zug,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-KUMAVISION AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Kuraray Europe GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-LAQA CARE AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Latscha Schöllhorn Partner AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Laubscher Präzision AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Leitner AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-LEM Surgical AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-lentiltec gmbh,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Let's Innovate,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Leu Consulting,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Lf mate,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Lifestage Solutions AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-LIFMET,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-LogMan AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-LUCENDRA SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Lucie - Trusted Trials,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Luminati,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Lymphatica Medtech SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-machineMD,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MAIT Swiss GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Manuplast,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MatterDecoder SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medartis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medddbase,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medgate AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medicalboard,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MedicalMountains GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medipack AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medistri,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Meditrial Europe Ltd.,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-medmix Group AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-medmix Switzerland AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Medows,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MedTech Europe,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MedTechXperts GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Metecon GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Metoxit AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Microdul AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-"Mikron Switzerland AG, Agno Division Tool",,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Milani Design & Consulting AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-mindsys GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MiniMed NPB Germany GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-mollet Präzisionsmechanik AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Moser-Baer AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MOTOREX AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Moving Spine AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MPS Micro Precision Systems AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-MTBC International,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-mylife Diabetes Care AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Mythentec AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nagi Bioscience,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nakamo AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nanoflexrobotics AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Naviswiss AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-NETZSCH-Gerätebau GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nexamedic SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nicole Frank Kommunikation,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-NIUTEC AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Nordic Usability GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-NSF Prosystem GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-NSK Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-NZZ Connect,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OCEI,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Oculox Technologies SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Odne AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Oertli Instrumente AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Oncomedical,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OnconiX AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OncopAI,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OPIS s.r.l.,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OptimalPSI AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Optiprint AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Orthopartner AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-OrthoSave GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Oviva AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Pavese AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Perdigó Medical,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Pharmalex GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-PLASTIFIL SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-PMS System,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Polaroid Therapeutics AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-POLYDEC SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-PolyPilot,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Positrigo,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Presspart AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Primaform AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Procap,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ProNaya Healthcare Solutions,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Prostep AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Pulnovo Medical,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-QARAlink SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Qity,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-QNX Software Systems GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Qserve Group Deutschland GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-QUNIQUE AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-RegAffinity GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Regenera SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-"Regulatory and Clinical Affairs, Medical Devices",,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Reinraum Tech AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-RENEVRA AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Röchling Medical SE,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Rudolf Brügger SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Ruetschi Technology AG (part of Elos Medtech AB),,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-S3 Connected Health,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Safety-Testcenter GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sana Suisse Med AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Schaerer Medical AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Schaltag AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Scheuermann und Heilig GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Schivo Medical,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Schweizerische Normenvereinigung SNV,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Schweizerische Post,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-SeaMount GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sedax AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sentient Health,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ServerBase AG (part of synaforce),,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Setbase GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-SE-Training GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-sfm medical devices GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Signer Titanium AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Silcoplast AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sitem Startup Club,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-sitem-insel AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-sitem-insel School,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sofreg GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Solectrix GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Sonceboz SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-SonoStent,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Speedgoat GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Spruce Group GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Standortförderung Kanton Bern,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Stepval,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-STERIS Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Supercomputingsystems AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-SwAPP,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swiss Center for Design and Health,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swiss Cluster,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swiss m4m Center,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swiss Peak Technologies SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swissina AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Swissrehamed GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Switzerland Global Enterprise,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Symbios Orthopedie,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Synbora AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Tandem Diabetes Care International,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Teoresi Group,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-TEQABLE AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-The MathWorks GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Tinkerblue AS,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-TransPerfect Translations Sàrl,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Triadem Solutions AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-TRIBECRAFT Innovators Designers Engineers,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-TUV Italia,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-TÜV SÜD Product Service GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Unit8,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Université de Genève,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-"VANGEST, S.A.",,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Varian Medical Systems Imaging Laboratory GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Vector Informatik GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-VISARTIS Healthcare GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Vital View Diagnostics AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-VITRUVENS,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Volpi AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-vVardis AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Walter Schweiz AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Watson-Marlow AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Weill Cornell Medical College,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Weita AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Willemin-Macodel SA,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Wineus AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-WYON AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Wyss Zurich Translational Center,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-YAYA Capital,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Zanol GmbH,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-ZMT Zurich MedTech AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Zoppas Industries Switzerland AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Zühlke Engineering AG,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
-Zürcher Kantonalbank,,,,,Swiss Medtech Day 2026,https://www.swiss-medtech.ch/sites/default/files/2026-06/SMD26_Companies_260610.pdf,,"likely startup, unverified — Swiss Medtech Day only"
+company,city,website,founder_name,founder_contact_masked,source,source_page,also_seen_in
+Apheros AG,,https://www.apheros.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Borobotics GmbH,,https://www.borobotics.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Caterra AG,,https://caterra.org,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Cellvie AG,,https://cellvie.bio,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Crypto Pharma GmbH,,https://crypto-pharma.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+CSky SA,,https://fr.csky.ai,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+DePoly SA,,https://fr.depoly.co/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Gapfruit AG,,https://www.gapfruit.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Haya Therapeutics SA,,https://www.hayatx.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+HeroSupport SA,,https://www.herosupport.care,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+INERGIO Technologies SA,,https://inergio.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Isochronic AG,,https://isochronic.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Kairos Medical AG,,https://kairosmedical.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Lightium AG,,https://lightium.co/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Medirapp AG,,https://medirapp.ai,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Mimic robotics AG,,https://www.mimicrobotics.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+MindMetrix AG,,https://www.mindmetrix.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Nagi Bioscience SA,,https://nagibio.ch,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Neur.on AI Solutions SA,,https://neur-on.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Noriware AG,,https://www.noriware.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+NovaGo Therapeutics AG,,https://www.novagotherapeutics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+NovoMOF AG,,https://novomof.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Oxara AG,,https://oxara.earth,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Oxyle AG,,https://oxyle.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Planeto SA,,https://www.planeto-energy.ch/fr/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+ReoR20 AG,,https://www.reor20.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Swiss-Mile Robotics AG,,https://www.swiss-mile.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Synendos Therapeutics AG,,https://www.synendos.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Tune Insight SA,,https://tuneinsight.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Ucentrics AG,,https://www.ucentrics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Unbound Potential GmbH,,https://www.unbound-potential.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Versics AG,,https://versics.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Vyzn AG,,https://www.vyzn.tech,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Yeastup AG,,https://www.yeastup.com,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Adastra Sustainability SA,,https://www.adastra.eco/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Aegis Rider AG,,https://aegisrider.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+AICA SA,,https://www.aica.tech/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+AI Medical AG,,https://www.ai-medical.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Akina AG,,https://www.akina.health/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Alter Ego Technologies AG,,https://www.alter-ego.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Annaida Technologies SA,,https://annaida.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Artiria Medical SA,,https://artiria-medical.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Ascento AG,,https://www.ascento.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+ASTRA Therapeutics GmbH,,https://www.astratherapeutics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Avelo AG,,https://www.avelolife.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Cellestia Biotech AG,,https://www.cellestia.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+CondenZero GmbH,,https://condenzero.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Decentralized Intelligence AG,,https://d23e.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+DEEPLIGHT SA,,https://deeplight.pro/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Egonym AG,,https://egonym.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+FenX AG,,https://www.fenx.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Floating Robotics AG,,https://www.floatingrobotics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Glucoloop AG,,https://glucoloop.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Irmos technologies AG,,https://www.irmos-tech.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Jua.ai AG,,https://www.jua.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+LifeMatrix Technologies AG,,https://www.lifematrixtechnologies.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Linia AG,,https://ttps//www.linia.ch/index.html,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+MeduSoil SA,,https://www.medusoil.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Miraex SA,,https://www.miraex.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Navignostics AG,,https://www.navignostics.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Neutrality Sàrl,,https://neutrality.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Rapidata AG,,https://www.rapidata.ai/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Sanetics AG,,https://sanetics.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Seprify AG (Impossible Materials AG),,https://seprify.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+SmartHelio Sàrl,,https://smarthelio.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Terapet SA,,https://terapet.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+TOLREMO therapeutics AG,,https://www.tolremo.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Topadur Pharma AG,,https://www.topadur.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+TOSA swisstech SA,,https://www.tosa-swisstech.ch/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+UniSieve AG,,https://www.unisieve.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Vandria SA,,https://www.vandria.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+Zaamigo AG,,https://zaamigo.com/,,,Innosuisse,https://www.innosuisse.admin.ch/en/approved-start-up-innovation-projects,
+DropGen,,https://www.dropgen.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Fy Cappa Biologics,,https://www.fcbiologics.com/,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Myria Biosciences,,https://www.myria.bio,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Engimmune Therapeutics,,https://www.engimmune.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Pattern BioSciences,,https://www.patternbio.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Visium,,https://visium.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+www.unitelabs.ch,,http://www.unitelabs.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+MaxWell Biosystems AG,,https://www.mxwbio.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Shift Cryptosecurity,,https://bitbox.swiss,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+enGene Statistics,,https://www.engene.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Memo Therapeutics,,https://memo-therapeutics.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+FGen,,https://www.fgen.ch,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+BioVersys AG,,https://www.bioversys.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+InSphero AG,,https://insphero.com,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Zurich Instruments,,https://www.zhinst.com/ch/en,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+"DownloadDownload (PDF, 2.7 MB)",,https://ethz.ch/content/dam/ethz/special-interest/bsse/department/Misc_PDFs/ETH_Biosystems_Image_Brochure_586x190_20250929_newEdition_Pages.pdf,,,ETH Zurich (BSSE),https://bsse.ethz.ch/department/spin-offs.html,
+Circelec,,https://circelec.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+InSituMetrix,,https://www.insitumetrix.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Hikane,,https://www.hikane.com/en/home,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Protonica,,https://www.protonica.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Raven Robotics,,http://www.ravenrobotics.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Rhonexum,,https://www.rhonexum.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Syre.ai,,https://www.syre.ai/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Timely,,https://timely-learning.com/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+MoleSense,,https://www.molesense.ch/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+MyJoint,,https://www.linkedin.com/company/optizonesport/,,,EPFL,https://www.epfl.ch/innovation/startup/discover-our-startups/epfl-startup-in-creation/,
+Polypheny GmbH,,https://polypheny.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Therayou AG,,https://www.therayou.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Povanhu GmbH,,https://www.povanhu.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Inodexa GmbH,,https://www.inodexa.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Basilea Media GmbH,,https://basileamedia.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+POC App AG,,https://www.poc-app.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Dentexion,,https://dentexion.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Moonlight AI,,https://www.moonlight-ai.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Narrowin,,https://www.narrowin.ch/de/index.html,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Kuori,,https://kuori.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+SEAL Therapeutics,,https://www.biozentrum.unibas.ch/research/technology-ventures/overview-3,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Mynatix AG,,https://mynatix.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Zysthera,,https://www.zysthera.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Calingo Insurances,,https://www.calingo.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Bottneuro,,https://www.bottneuro.ch/en,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Personalized Medical Products,,https://swiss-pmp.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Aukera therapeutics,,https://www.aukera.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Galvita,,https://www.galvita.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Codonis,,https://codonis.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Voltiris,,https://www.voltiris.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Lean Financial Solutions,,https://leafs.ch/en/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Keine Agentur,,https://keineagentur.info/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Artifex Medical,,https://artifex.health/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+CryoWrite,,https://cryowrite.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Cimeio Therapeutics,,https://www.cimeio.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Consense Philanthropy Consulting,,https://www.aboutconsense.ch,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Rekonas,,https://www.rekonas.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Prosalute,,https://www.prosalute.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Dedomena,,https://www.dedomena.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Saluta Coach,,https://www.salutacoach.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Bottmedical,,https://www.bottmedical.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Acthera,,https://acthera-therapeutics.com,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Deep Breath Intelligence,,https://dbi.ch/home,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Nuonex,,https://nuonex.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Ad Mirabiles,,https://www.admirabiles.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+KetoSwiss,,https://www.keto.swiss/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+QNAMI,,https://qnami.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Shapemeans,,https://shapemeans.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Epibreed,,https://epibreed.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+T3 Pharmaceuticals,,https://www.t3pharma.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+ECyTech,,https://swissbluetecbridge.ch/entrepreneurs/ecytech/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Artidis,,https://artidis.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Polyneuron,,https://polyneuron.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+HEJUBA,,https://hejuba.ch/de/home,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+GeneGuide,,https://www.geneguide.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Mimedis,,https://www.medartis.com/fileadmin/user_upload/Investor_Relations/Media_Releases_EN/2017/170705_MM_Medartis_Mimedis_e.pdf,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+CureAB,,https://www.cureab.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Biotechnostics,,https://www.investiere.ch/biotechnostics,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Mininavident,,https://www.mininavident.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Advanced Osteotomy Tools,,https://aot.swiss/company/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+HighDim,,https://highdim.swiss/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+MarktIX,,https://www.marktix.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+NanoScan,,https://www.nanoscan.ch/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Santhera Pharmaceuticals,,https://www.santhera.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Alpha-O Peptides,,https://www.aopeptides.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+4-Antibody,,https://agenusbio.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Nanonis,,https://www.specs-group.com/nanonis/products/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Canoo Engineering,,https://imtf.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Diagene,,https://www.diagene.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Nanosurf,,https://www.nanosurf.com/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+Vitaplant,,https://vitaplant.ch/de/,,,University of Basel,https://www.unibas.ch/en/University/Innovation/Propelling-Grants/Our-Start-ups.html,
+dexterousendoscopes.com,,https://www.dexterousendoscopes.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+molesense.ch,,https://www.molesense.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+optizone.ch,,https://www.optizone.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+beyond-diagnostics.com,,https://www.beyond-diagnostics.com,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+neurodaignostics.com,,https://neurodaignostics.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+rhovica.com,,https://rhovica.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+skaaltec.com,,https://skaaltec.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+softletics.ch,,https://softletics.ch/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,
+veltist.com,,https://veltist.com/,,,BioAlps,https://bioalps.org/venture-leaders-medtech-2026/,

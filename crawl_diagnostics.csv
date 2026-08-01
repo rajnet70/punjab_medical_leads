@@ -4,7 +4,7 @@ Borobotics GmbH,12,12,2,Y,Y,Y,N,Y,Y
 Caterra AG,10,11,1,Y,Y,Y,N,Y,Y
 Cellvie AG,19,12,2,Y,Y,Y,Y,Y,Y
 Crypto Pharma GmbH,1,2,1,Y,Y,Y,N,Y,N
-CSky SA,15,12,2,N,N,Y,Y,Y,N
+CSky SA,15,12,2,Y,Y,Y,Y,Y,N
 DePoly SA,0,0,0,N,N,N,N,Y,N
 Gapfruit AG,26,12,2,Y,Y,Y,N,Y,Y
 Haya Therapeutics SA,15,12,2,Y,Y,Y,Y,Y,Y
@@ -15,7 +15,7 @@ Kairos Medical AG,0,1,0,Y,Y,N,N,Y,N
 Lightium AG,2,3,1,Y,N,N,N,Y,N
 Medirapp AG,6,7,1,Y,Y,Y,N,Y,Y
 Mimic robotics AG,14,12,1,Y,Y,Y,N,Y,Y
-MindMetrix AG,1,2,1,Y,Y,N,N,Y,N
+MindMetrix AG,1,2,1,N,Y,N,N,Y,N
 Nagi Bioscience SA,54,12,1,Y,Y,Y,Y,Y,N
 Neur.on AI Solutions SA,7,7,2,Y,Y,Y,Y,Y,N
 Noriware AG,0,1,0,Y,N,N,N,Y,N
@@ -32,8 +32,8 @@ Ucentrics AG,7,8,1,Y,Y,Y,Y,Y,Y
 Unbound Potential GmbH,7,8,2,Y,Y,Y,Y,Y,Y
 Versics AG,0,0,0,N,N,N,N,Y,N
 Vyzn AG,58,12,2,Y,Y,Y,Y,Y,N
-Yeastup AG,16,12,2,Y,N,N,N,Y,Y
-Adastra Sustainability SA,3,4,1,Y,N,Y,Y,Y,N
+Yeastup AG,16,12,2,N,N,N,N,Y,Y
+Adastra Sustainability SA,3,4,1,Y,N,N,Y,Y,N
 Aegis Rider AG,17,12,1,Y,Y,N,Y,Y,N
 AICA SA,37,12,2,Y,Y,Y,Y,Y,Y
 AI Medical AG,20,12,2,Y,Y,Y,N,Y,Y
@@ -42,7 +42,7 @@ Alter Ego Technologies AG,5,6,2,Y,N,N,N,Y,N
 Annaida Technologies SA,0,1,0,N,N,N,N,Y,N
 Artiria Medical SA,5,6,1,Y,Y,Y,Y,Y,Y
 Ascento AG,5,3,1,Y,Y,N,Y,Y,N
-ASTRA Therapeutics GmbH,0,0,0,N,N,N,N,Y,N
+ASTRA Therapeutics GmbH,7,8,2,Y,N,N,Y,Y,N
 Avelo AG,11,12,2,Y,Y,Y,N,Y,Y
 Cellestia Biotech AG,0,0,0,N,N,N,N,Y,N
 CondenZero GmbH,17,12,2,N,Y,N,Y,Y,N
@@ -57,18 +57,18 @@ Jua.ai AG,8,1,0,N,N,N,N,Y,N
 LifeMatrix Technologies AG,19,12,2,Y,Y,N,Y,Y,N
 Linia AG,0,0,0,N,N,N,N,Y,N
 MeduSoil SA,0,1,0,N,Y,N,N,Y,N
-Miraex SA,6,6,1,Y,N,N,N,Y,N
+Miraex SA,0,0,0,N,N,N,N,Y,N
 Navignostics AG,32,12,2,Y,Y,Y,Y,Y,N
 Neutrality Sàrl,5,6,1,Y,Y,Y,Y,Y,N
 Rapidata AG,22,12,2,Y,Y,Y,Y,Y,N
 Sanetics AG,11,12,2,Y,Y,N,N,Y,N
-Seprify AG (Impossible Materials AG),33,12,2,Y,Y,N,N,Y,Y
+Seprify AG (Impossible Materials AG),34,12,2,Y,Y,Y,N,Y,Y
 SmartHelio Sàrl,0,0,0,N,N,N,N,Y,N
 Terapet SA,37,12,2,Y,Y,Y,Y,Y,Y
-TOLREMO therapeutics AG,50,12,2,Y,N,Y,Y,Y,Y
+TOLREMO therapeutics AG,50,12,2,N,N,Y,Y,Y,Y
 Topadur Pharma AG,5,6,2,Y,N,N,Y,Y,N
 TOSA swisstech SA,0,1,0,N,N,N,N,Y,N
-UniSieve AG,14,12,2,Y,Y,N,N,Y,Y
+UniSieve AG,14,12,2,Y,N,N,N,Y,Y
 Vandria SA,0,1,0,N,N,N,N,Y,N
 Zaamigo AG,0,0,0,N,N,N,N,Y,N
 DropGen,0,1,0,Y,N,Y,N,Y,N
@@ -79,9 +79,9 @@ Pattern BioSciences,3,4,1,Y,N,N,N,Y,Y
 Visium,33,12,1,Y,Y,Y,N,Y,N
 www.unitelabs.ch,26,12,1,Y,Y,Y,N,Y,N
 MaxWell Biosystems AG,123,12,1,Y,Y,Y,N,Y,N
-Shift Cryptosecurity,56,12,2,Y,Y,N,N,Y,Y
-enGene Statistics,4,5,2,Y,N,N,Y,Y,N
-Memo Therapeutics,32,12,2,Y,Y,Y,Y,Y,N
+Shift Cryptosecurity,55,12,2,Y,Y,N,N,Y,Y
+enGene Statistics,4,5,2,N,N,N,Y,Y,N
+Memo Therapeutics,32,12,2,N,Y,Y,Y,Y,N
 FGen,15,12,1,Y,N,N,N,Y,N
 BioVersys AG,19,12,1,Y,Y,Y,Y,Y,Y
 InSphero AG,92,12,1,Y,Y,Y,Y,Y,N
@@ -91,15 +91,15 @@ Circelec,0,1,0,N,N,N,N,Y,N
 InSituMetrix,17,12,2,Y,Y,N,Y,Y,N
 Hikane,3,4,2,Y,Y,N,N,Y,N
 Protonica,2,3,1,Y,N,Y,Y,Y,N
-Raven Robotics,0,0,0,N,N,N,N,Y,N
+Raven Robotics,0,1,0,Y,Y,N,N,Y,N
 Rhonexum,7,8,2,Y,Y,N,Y,Y,N
 Syre.ai,7,8,2,Y,N,N,N,Y,N
 Timely,0,1,0,N,N,N,N,Y,N
 MoleSense,12,12,2,Y,Y,Y,Y,Y,Y
-MyJoint,132,12,2,Y,Y,Y,N,Y,Y
+MyJoint,133,12,2,Y,Y,Y,N,Y,Y
 Polypheny GmbH,25,12,2,Y,N,N,N,Y,N
 Therayou AG,0,0,0,N,N,N,N,Y,N
-Povanhu GmbH,23,12,1,N,N,N,N,Y,N
+Povanhu GmbH,20,12,1,N,N,N,N,Y,N
 Inodexa GmbH,4,4,1,Y,Y,Y,Y,Y,N
 Basilea Media GmbH,1,2,1,Y,N,N,N,Y,N
 POC App AG,9,10,2,Y,Y,N,Y,Y,N
@@ -132,16 +132,16 @@ Acthera,0,0,0,N,N,N,N,Y,N
 Deep Breath Intelligence,33,12,1,Y,Y,Y,Y,Y,Y
 Nuonex,0,0,0,N,N,N,N,Y,N
 Ad Mirabiles,30,12,2,Y,Y,N,N,Y,N
-KetoSwiss,7,8,2,Y,Y,N,Y,Y,Y
+KetoSwiss,7,8,2,Y,N,N,Y,Y,Y
 QNAMI,47,12,2,Y,N,N,N,Y,N
 Shapemeans,1,2,1,Y,N,N,Y,Y,N
 Epibreed,3,4,1,N,N,Y,N,Y,N
 T3 Pharmaceuticals,18,12,2,Y,Y,Y,Y,Y,N
 ECyTech,0,0,0,N,N,N,N,Y,N
 Artidis,23,12,2,Y,Y,Y,Y,Y,N
-Polyneuron,15,12,2,Y,N,Y,Y,Y,N
+Polyneuron,15,12,2,N,N,Y,Y,Y,N
 HEJUBA,59,12,2,Y,Y,Y,Y,Y,N
-GeneGuide,4,5,2,Y,Y,N,N,Y,N
+GeneGuide,4,5,2,N,Y,N,N,Y,N
 Mimedis,0,0,0,N,N,N,N,Y,N
 CureAB,0,0,0,N,N,N,N,Y,N
 Biotechnostics,0,0,0,N,N,N,N,Y,N
@@ -167,27 +167,3 @@ rhovica.com,26,12,2,Y,N,Y,Y,Y,N
 skaaltec.com,0,0,0,N,N,N,N,Y,N
 softletics.ch,0,1,0,N,N,N,N,Y,N
 veltist.com,3,4,1,Y,Y,N,N,Y,N
-Aligned AG,10,9,2,Y,N,N,N,Y,N
-Anel AG,10,9,2,Y,N,N,N,Y,N
-CINDER AG,10,9,2,Y,N,N,N,Y,N
-CMSA,10,9,2,Y,N,Y,N,Y,N
-CVCI,10,9,2,Y,N,Y,N,Y,N
-EDA,10,9,2,Y,N,Y,N,Y,N
-eevolve AG,10,9,2,Y,N,Y,N,Y,N
-FAU Erlangen,10,9,2,Y,N,Y,N,Y,N
-Faulhaber SA,10,9,2,Y,N,Y,N,Y,N
-GENUI AG,4,4,2,N,N,Y,N,Y,N
-HARTER GmbH,4,4,2,N,N,Y,N,Y,N
-icotec,4,4,2,N,N,Y,N,Y,N
-iCure,4,4,2,N,N,Y,N,Y,N
-ISO,4,4,2,N,N,Y,N,Y,N
-Kuraray Europe GmbH,4,4,2,N,N,Y,N,Y,N
-Luminati,4,4,2,N,N,Y,N,Y,N
-Medartis AG,4,4,2,N,N,Y,N,Y,N
-MedTech Europe,4,4,2,N,N,Y,N,Y,N
-OCEI,4,4,2,N,N,Y,N,Y,N
-Prostep AG,4,4,2,N,N,Y,N,Y,N
-SeaMount GmbH,4,4,2,N,N,Y,N,Y,N
-Speedgoat GmbH,4,4,2,N,N,Y,N,Y,N
-SwAPP,4,4,2,N,N,Y,N,Y,N
-vVardis AG,4,4,2,N,N,Y,N,Y,N
