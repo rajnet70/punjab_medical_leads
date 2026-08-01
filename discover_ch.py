@@ -323,10 +323,20 @@ def main():
     print(f"  {len(rows)} companies found")
     all_rows.extend(rows)
 
-    print("\n=== Swiss Medtech Day 2026 PDF ===")
-    rows = parse_swiss_medtech_pdf()
-    print(f"  {len(rows)} companies found")
-    all_rows.extend(rows)
+    # SWISS MEDTECH DAY — DISABLED per decision to focus on quality over
+    # quantity. This source's ~850-name attendee list mixes genuine
+    # startups with universities, trade associations, government bodies,
+    # and large established manufacturers with no reliable structural
+    # way to separate them (confirmed across two rounds of manual
+    # exclusion-list building). Commented out, not deleted — a real,
+    # reversible toggle if this source is revisited later with a
+    # different approach (e.g. the Zefix age-check concept discussed
+    # but not pursued, in favor of this simpler, decisive cut).
+    #
+    # print("\n=== Swiss Medtech Day 2026 PDF ===")
+    # rows = parse_swiss_medtech_pdf()
+    # print(f"  {len(rows)} companies found")
+    # all_rows.extend(rows)
 
     merged = {}
     for row in all_rows:

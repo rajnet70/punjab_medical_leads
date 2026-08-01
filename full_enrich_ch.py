@@ -38,6 +38,33 @@ MEDIUM_PRIORITY_WORDS = ["team", "leadership", "management", "company", "about",
                             "career", "job", "partner", "distributor"]
 LOW_PRIORITY_WORDS = ["news", "press", "contact", "legal", "privacy"]
 
+# NEW: pages that should be EXCLUDED from Products/Services/Technologies/
+# Specializations extraction entirely, not just deprioritized. Legal,
+# cookie, and privacy pages were confirmed to leak boilerplate text
+# ("cookie preferences", "data processing system") into these fields —
+# deprioritizing crawl order didn't stop them being crawled and used
+# once the crawl limit was reached; this is a genuine exclusion instead.
+CONTENT_EXCLUDED_PAGE_PATTERNS = [
+    "privacy", "cookie", "legal", "impressum", "terms", "datenschutz",
+    "agb", "cgv", "mentions-legales", "gdpr",
+]
+
+def is_content_excluded_page(url):
+    return any(p in url.lower() for p in CONTENT_EXCLUDED_PAGE_PATTERNS)
+
+# NEW: item-level noise filter — catches nav/footer/boilerplate text that
+# structurally resembles a "card" or list item (short, matches vocabulary
+# by coincidence) but isn't real product/service/technology content.
+NOISE_ITEM_PATTERNS = [
+    "cookie", "privacy policy", "terms of", "all rights reserved",
+    "sign up", "subscribe", "newsletter", "follow us", "copyright",
+    "log in", "sign in", "read more", "learn more", "click here",
+]
+
+def is_noise_item(text):
+    lowered = text.lower()
+    return any(p in lowered for p in NOISE_ITEM_PATTERNS)
+
 def score_link(link_text, link_url):
     """Returns an integer relevance score — higher crawls first."""
     combined = (link_text + " " + link_url).lower()
@@ -239,11 +266,18 @@ def _extract_card_like_items(soup):
 
 def classify_by_vocabulary(repository, vocab):
     """Scans every crawled page's structured items for vocabulary
-    matches — classification by content, not by heading label."""
+    matches — classification by content, not by heading label.
+    Excludes legal/cookie/privacy pages entirely (genuine noise source,
+    confirmed leaking boilerplate into these fields) and filters out
+    nav/footer-style noise items even from pages that are kept."""
     matches = []
     for url, text, soup in repository:
+        if is_content_excluded_page(url):
+            continue  # skip this page entirely for commercial-field extraction
         items = _extract_card_like_items(soup)
         for item in items:
+            if is_noise_item(item):
+                continue
             lowered = item.lower()
             if any(v in lowered for v in vocab):
                 matches.append(item)
@@ -251,6 +285,8 @@ def classify_by_vocabulary(repository, vocab):
         # covers sites that describe products/services in prose
         for p in soup.find_all("p"):
             p_text = p.get_text(strip=True)
+            if is_noise_item(p_text):
+                continue
             if 20 <= len(p_text) <= 200 and any(v in p_text.lower() for v in vocab):
                 matches.append(p_text)
     # dedupe, preserve order, cap for a clean CSV cell
