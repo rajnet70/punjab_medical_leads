@@ -44,9 +44,17 @@ LOW_PRIORITY_WORDS = ["news", "press", "contact", "legal", "privacy"]
 # ("cookie preferences", "data processing system") into these fields —
 # deprioritizing crawl order didn't stop them being crawled and used
 # once the crawl limit was reached; this is a genuine exclusion instead.
+#
+# Careers/jobs pages ADDED after a real run confirmed job-requirement
+# text ("Degree in Mechanical Engineering", "Bachelor's or Master's
+# degree") was being classified as a company SERVICE, because job
+# postings genuinely contain real vocabulary words ("engineering") in
+# an unrelated context. Same root cause as the legal-page problem —
+# real words appearing on the wrong kind of page.
 CONTENT_EXCLUDED_PAGE_PATTERNS = [
     "privacy", "cookie", "legal", "impressum", "terms", "datenschutz",
     "agb", "cgv", "mentions-legales", "gdpr",
+    "career", "jobs", "job-", "stellen", "emplois", "vacature",
 ]
 
 def is_content_excluded_page(url):
@@ -55,14 +63,27 @@ def is_content_excluded_page(url):
 # NEW: item-level noise filter — catches nav/footer/boilerplate text that
 # structurally resembles a "card" or list item (short, matches vocabulary
 # by coincidence) but isn't real product/service/technology content.
+#
+# Email-pattern check ADDED after a real run showed contact emails
+# (hans-joerg.dennig@borobotics.ch) leaking directly into the
+# Technologies field — a footer/contact card was scanned like any
+# other card, with no check that its content was actually contact
+# info rather than product content.
+import re as _re_noise_check
+EMAIL_PATTERN_CHECK = _re_noise_check.compile(r'[\w.\-]+@[\w\-]+\.[a-zA-Z]{2,}')
+
 NOISE_ITEM_PATTERNS = [
     "cookie", "privacy policy", "terms of", "all rights reserved",
     "sign up", "subscribe", "newsletter", "follow us", "copyright",
     "log in", "sign in", "read more", "learn more", "click here",
+    "we are looking for", "we're hiring", "apply now", "job description",
+    "years of experience", "bachelor's or master", "degree in",
 ]
 
 def is_noise_item(text):
     lowered = text.lower()
+    if EMAIL_PATTERN_CHECK.search(text):
+        return True  # contains a raw email — contact info, not commercial content
     return any(p in lowered for p in NOISE_ITEM_PATTERNS)
 
 def score_link(link_text, link_url):
