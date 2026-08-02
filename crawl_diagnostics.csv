@@ -36,7 +36,7 @@ Yeastup AG,16,12,2,N,N,N,N,Y,Y
 Adastra Sustainability SA,3,4,1,Y,N,N,Y,Y,N
 Aegis Rider AG,17,12,1,Y,Y,N,Y,Y,N
 AICA SA,37,12,2,Y,Y,Y,Y,Y,Y
-AI Medical AG,20,12,2,Y,Y,Y,N,Y,Y
+AI Medical AG,20,12,2,Y,N,Y,N,Y,Y
 Akina AG,24,12,1,Y,Y,Y,N,Y,N
 Alter Ego Technologies AG,5,6,2,Y,N,N,N,Y,N
 Annaida Technologies SA,0,1,0,N,N,N,N,Y,N
@@ -47,7 +47,7 @@ Avelo AG,11,12,2,Y,Y,Y,N,Y,Y
 Cellestia Biotech AG,0,0,0,N,N,N,N,Y,N
 CondenZero GmbH,17,12,2,N,Y,N,Y,Y,N
 Decentralized Intelligence AG,18,12,2,Y,Y,Y,Y,Y,N
-DEEPLIGHT SA,11,12,1,Y,N,N,N,Y,Y
+DEEPLIGHT SA,11,9,1,Y,N,N,N,Y,Y
 Egonym AG,16,12,2,Y,Y,Y,Y,Y,N
 FenX AG,9,10,1,N,Y,N,N,Y,Y
 Floating Robotics AG,11,12,1,Y,Y,Y,N,Y,Y
@@ -57,7 +57,7 @@ Jua.ai AG,8,1,0,N,N,N,N,Y,N
 LifeMatrix Technologies AG,19,12,2,Y,Y,N,Y,Y,N
 Linia AG,0,0,0,N,N,N,N,Y,N
 MeduSoil SA,0,1,0,N,Y,N,N,Y,N
-Miraex SA,0,0,0,N,N,N,N,Y,N
+Miraex SA,6,6,1,Y,N,N,N,Y,N
 Navignostics AG,32,12,2,Y,Y,Y,Y,Y,N
 Neutrality Sàrl,5,6,1,Y,Y,Y,Y,Y,N
 Rapidata AG,22,12,2,Y,Y,Y,Y,Y,N
@@ -65,11 +65,11 @@ Sanetics AG,11,12,2,Y,Y,N,N,Y,N
 Seprify AG (Impossible Materials AG),34,12,2,Y,Y,Y,N,Y,Y
 SmartHelio Sàrl,0,0,0,N,N,N,N,Y,N
 Terapet SA,37,12,2,Y,Y,Y,Y,Y,Y
-TOLREMO therapeutics AG,50,12,2,N,N,Y,Y,Y,Y
+TOLREMO therapeutics AG,50,12,2,N,N,N,Y,Y,Y
 Topadur Pharma AG,5,6,2,Y,N,N,Y,Y,N
 TOSA swisstech SA,0,1,0,N,N,N,N,Y,N
 UniSieve AG,14,12,2,Y,N,N,N,Y,Y
-Vandria SA,0,1,0,N,N,N,N,Y,N
+Vandria SA,0,0,0,N,N,N,N,Y,N
 Zaamigo AG,0,0,0,N,N,N,N,Y,N
 DropGen,0,1,0,Y,N,Y,N,Y,N
 Fy Cappa Biologics,0,1,0,N,Y,N,N,Y,N
@@ -95,8 +95,8 @@ Raven Robotics,0,1,0,Y,Y,N,N,Y,N
 Rhonexum,7,8,2,Y,Y,N,Y,Y,N
 Syre.ai,7,8,2,Y,N,N,N,Y,N
 Timely,0,1,0,N,N,N,N,Y,N
-MoleSense,12,12,2,Y,Y,Y,Y,Y,Y
-MyJoint,133,12,2,Y,Y,Y,N,Y,Y
+MoleSense,12,12,2,Y,N,N,Y,Y,Y
+MyJoint,116,12,2,Y,Y,N,N,Y,Y
 Polypheny GmbH,25,12,2,Y,N,N,N,Y,N
 Therayou AG,0,0,0,N,N,N,N,Y,N
 Povanhu GmbH,20,12,1,N,N,N,N,Y,N
@@ -104,7 +104,7 @@ Inodexa GmbH,4,4,1,Y,Y,Y,Y,Y,N
 Basilea Media GmbH,1,2,1,Y,N,N,N,Y,N
 POC App AG,9,10,2,Y,Y,N,Y,Y,N
 Dentexion,1,2,1,Y,N,Y,Y,Y,N
-Moonlight AI,15,12,2,Y,Y,Y,N,Y,Y
+Moonlight AI,15,12,2,Y,Y,N,N,Y,Y
 Narrowin,52,12,2,Y,Y,Y,N,Y,N
 Kuori,10,11,1,N,Y,N,N,Y,Y
 SEAL Therapeutics,257,12,1,Y,Y,Y,N,Y,N
@@ -159,7 +159,7 @@ Diagene,23,12,2,N,Y,N,N,Y,N
 Nanosurf,65,12,1,Y,Y,Y,N,Y,N
 Vitaplant,21,12,2,Y,Y,N,N,Y,N
 dexterousendoscopes.com,27,12,2,Y,Y,Y,N,Y,Y
-molesense.ch,12,12,2,Y,Y,Y,Y,Y,Y
+molesense.ch,12,12,2,Y,N,N,Y,Y,Y
 optizone.ch,0,1,0,Y,Y,N,N,Y,N
 beyond-diagnostics.com,2,3,1,Y,Y,N,N,Y,N
 neurodaignostics.com,15,12,2,Y,N,Y,Y,Y,N
