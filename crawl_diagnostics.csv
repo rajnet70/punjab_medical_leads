@@ -23,7 +23,7 @@ NovaGo Therapeutics AG,9,10,2,N,N,Y,Y,Y,N
 NovoMOF AG,36,12,2,Y,Y,N,Y,Y,N
 Oxara AG,52,12,2,Y,N,N,N,Y,N
 Oxyle AG,0,1,0,N,N,N,N,Y,N
-Planeto SA,49,12,2,Y,Y,N,N,Y,N
+Planeto SA,51,12,2,Y,Y,N,N,Y,N
 ReoR20 AG,0,1,0,N,N,N,N,Y,N
 Swiss-Mile Robotics AG,0,0,0,N,N,N,N,Y,N
 Synendos Therapeutics AG,29,12,2,Y,Y,Y,Y,Y,N
@@ -43,11 +43,11 @@ Annaida Technologies SA,0,1,0,N,N,N,N,Y,N
 Artiria Medical SA,5,6,1,Y,Y,Y,Y,Y,Y
 Ascento AG,5,3,1,Y,Y,N,Y,Y,N
 ASTRA Therapeutics GmbH,7,8,2,Y,N,N,Y,Y,N
-Avelo AG,11,12,2,Y,Y,Y,N,Y,Y
+Avelo AG,7,7,1,Y,Y,Y,N,Y,Y
 Cellestia Biotech AG,0,0,0,N,N,N,N,Y,N
 CondenZero GmbH,17,12,2,N,Y,N,Y,Y,N
 Decentralized Intelligence AG,18,12,2,Y,Y,Y,Y,Y,N
-DEEPLIGHT SA,11,9,1,Y,N,N,N,Y,Y
+DEEPLIGHT SA,11,12,1,Y,N,N,N,Y,Y
 Egonym AG,16,12,2,Y,Y,Y,Y,Y,N
 FenX AG,9,10,1,N,Y,N,N,Y,Y
 Floating Robotics AG,11,12,1,Y,Y,Y,N,Y,Y
@@ -91,15 +91,15 @@ Circelec,0,1,0,N,N,N,N,Y,N
 InSituMetrix,17,12,2,Y,Y,N,Y,Y,N
 Hikane,3,4,2,Y,Y,N,N,Y,N
 Protonica,2,3,1,Y,N,Y,Y,Y,N
-Raven Robotics,0,1,0,Y,Y,N,N,Y,N
+Raven Robotics,0,0,0,N,N,N,N,Y,N
 Rhonexum,7,8,2,Y,Y,N,Y,Y,N
 Syre.ai,7,8,2,Y,N,N,N,Y,N
 Timely,0,1,0,N,N,N,N,Y,N
 MoleSense,12,12,2,Y,N,N,Y,Y,Y
-MyJoint,116,12,2,Y,Y,N,N,Y,Y
+MyJoint,136,12,2,Y,Y,Y,N,Y,Y
 Polypheny GmbH,25,12,2,Y,N,N,N,Y,N
 Therayou AG,0,0,0,N,N,N,N,Y,N
-Povanhu GmbH,20,12,1,N,N,N,N,Y,N
+Povanhu GmbH,23,12,1,N,N,N,N,Y,N
 Inodexa GmbH,4,4,1,Y,Y,Y,Y,Y,N
 Basilea Media GmbH,1,2,1,Y,N,N,N,Y,N
 POC App AG,9,10,2,Y,Y,N,Y,Y,N
@@ -107,7 +107,7 @@ Dentexion,1,2,1,Y,N,Y,Y,Y,N
 Moonlight AI,15,12,2,Y,Y,N,N,Y,Y
 Narrowin,52,12,2,Y,Y,Y,N,Y,N
 Kuori,10,11,1,N,Y,N,N,Y,Y
-SEAL Therapeutics,257,12,1,Y,Y,Y,N,Y,N
+SEAL Therapeutics,358,12,1,Y,Y,Y,N,Y,N
 Mynatix AG,13,12,2,Y,Y,Y,Y,Y,N
 Zysthera,0,0,0,N,N,N,N,Y,N
 Calingo Insurances,10,11,2,Y,N,N,Y,Y,N
